@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Avatar, Button, Card, Title, Paragraph, Text } from 'react-native-paper';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 
 const IOTD = () => (
   <Card style={styles.container} > 
-    <Card.Cover source={{ uri: 'https://picsum.photos/700' }}/>
+    <Card.Cover Image source={require('../IMG_1322.jpg')}/>
     <Text style={styles.text}>
             ITEM OF THE DAY
     </Text>
