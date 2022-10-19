@@ -5,11 +5,11 @@ const TestCard = () => {
   const ANIMAL_NAMES = [
     {
       id: 1,
-      name: 'Cat',
+      name: 'Beef',
     },
     {
       id: 2,
-      name: 'Dog',
+      name: 'Lettuce',
     },
     {
       id: 3,
@@ -17,19 +17,19 @@ const TestCard = () => {
     },
     {
       id: 4,
-      name: 'Duck',
+      name: 'Tomato',
     },
     {
       id: 5,
-      name: 'Cow',
+      name: 'Avocado',
     },
     {
       id: 6,
-      name: 'Deer',
+      name: 'Lemon',
     },
     {
       id: 7,
-      name: 'Horse',
+      name: 'Lime',
     }
  
   ];
@@ -65,6 +65,7 @@ const TestCard = () => {
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Separator}
         horizontal={true}
+        showsHorizontalScrollIndicator={false}
       />
  
     </SafeAreaView>
@@ -87,18 +88,16 @@ const styleSheet = StyleSheet.create({
  
   item: {
     padding: 8,
-    backgroundColor: '#A020F0',
-    width: 150,
-    height: 150,
+    backgroundColor: '#9b7ede',
+    width: 100,
+    height: 100,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
-    shadowColor: '#52006A',  
-    elevation: 20,  
   },
  
   itemText: {
-    fontSize: 24,
+    fontSize: 16,
     color: 'white',
     textAlign: 'center'
   }

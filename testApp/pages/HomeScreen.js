@@ -14,6 +14,7 @@ const HomeScreen = () => {
     <Hello />
     <IOTD />
     <TestCard />
+    <TestCard />
     <AddButton />
   </ScrollView>
   );
