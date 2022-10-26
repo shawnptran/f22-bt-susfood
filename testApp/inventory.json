@@ -1,0 +1,89 @@
+{
+
+    "Inventory" :   [ 
+    {
+        "name" : "Apples", 
+        "expire" : 5, 
+        "icon" : "something",
+        "bkgd" : "somecolor",
+        "calories" :  "50",
+        "type" : "fruit",
+        "instructions" : "",
+        "compostable" : true,
+        "environment" : "dry"
+    },
+    
+    {
+        "name" : "Bananas", 
+        "expire" : 4, 
+        "icon" : "something",
+        "bkgd" : "somecolor",
+        "calories" :  "50",
+        "type" : "fruit",
+        "instructions" : "",
+        "compostable" : true,
+        "environment" : "dry"
+    },
+    
+    {
+        "name" : "Pears", 
+        "expire" : 3, 
+        "icon" : "something",
+        "bkgd" : "somecolor",
+        "calories" :  "50",
+        "type" : "fruit",
+        "instructions" : "",
+        "compostable" : true,
+        "environment" : "dry"
+    },
+
+    {
+        "name" : "Lettuce", 
+        "expire" : 6, 
+        "icon" : "something",
+        "bkgd" : "somecolor",
+        "calories" :  "20",
+        "type" : "vegetable",
+        "instructions" : "",
+        "compostable" : true,
+        "environment" : "dry"
+    },
+
+    {
+        "name" : "Strawberries", 
+        "expire" : 5, 
+        "icon" : "something",
+        "bkgd" : "somecolor",
+        "calories" :  "10",
+        "type" : "fruit",
+        "instructions" : "",
+        "compostable" : true,
+        "environment" : "dry"
+    },
+
+    {
+        "name" : "Grapes", 
+        "expire" : 5, 
+        "icon" : "something",
+        "bkgd" : "somecolor",
+        "calories" :  "50",
+        "type" : "fruit",
+        "instructions" : "",
+        "compostable" : true,
+        "environment" : "dry"
+    },
+
+    {
+        "name" : "Watermelon", 
+        "expire" : 5, 
+        "icon" : "something",
+        "bkgd" : "somecolor",
+        "calories" :  "50",
+        "type" : "fruit",
+        "instructions" : "",
+        "compostable" : true,
+        "environment" : "dry"
+    }
+    
+    ] 
+    }
