@@ -7,12 +7,14 @@ import AddButton from '../components/button';
 import IOTD from '../components/IOTD';
 import Hello from '../components/hello';
 import TestCard from '../components/testCard';
+import TwoColumn from '../components/columnList';
 
 const SearchScreen = () => {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <ScrollView >
         <Text>Search!</Text>
-      </View>
+        <TwoColumn />
+      </ScrollView>
     );
   }
 
