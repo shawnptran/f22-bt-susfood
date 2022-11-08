@@ -105,6 +105,7 @@ const TwoColumn = () => {
         horizontal={false}
         numColumns={2}
         // showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
 
       />
  

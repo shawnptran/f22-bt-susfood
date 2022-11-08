@@ -15,8 +15,8 @@ const SearchScreen = () => {
       // <ScrollView >
         <View style={styles.container}> 
           <Text>Search!</Text>
-          {/* <TwoColumn /> */}
-          <CustomAlert />
+          <TwoColumn />
+          {/* <CustomAlert /> */}
         </View>
       // </ScrollView>
     );
