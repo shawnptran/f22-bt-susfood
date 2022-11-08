@@ -8,14 +8,27 @@ import IOTD from '../components/IOTD';
 import Hello from '../components/hello';
 import TestCard from '../components/testCard';
 import TwoColumn from '../components/columnList';
+import CustomAlert from '../components/customAlert';
 
 const SearchScreen = () => {
     return (
-      <ScrollView >
-        <Text>Search!</Text>
-        <TwoColumn />
-      </ScrollView>
+      // <ScrollView >
+        <View style={styles.container}> 
+          <Text>Search!</Text>
+          {/* <TwoColumn /> */}
+          <CustomAlert />
+        </View>
+      // </ScrollView>
     );
   }
 
 export default SearchScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
+  }
+})
