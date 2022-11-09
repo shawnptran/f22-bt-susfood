@@ -1,4 +1,5 @@
-import { View, StyleSheet, SafeAreaView, FlatList, Text } from 'react-native';
+import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image } from 'react-native';
+
  
 const TwoColumn = () => {
  
@@ -6,65 +7,70 @@ const TwoColumn = () => {
     {
       id: 1,
       name: 'Beef',
+      src:require('../icons/random.png')
     },
     {
       id: 2,
       name: 'Lettuce',
+      src:require('../icons/random.png')
     },
     {
       id: 3,
       name: 'Chicken',
+      src:require('../icons/random.png')
     },
     {
       id: 4,
       name: 'Tomato',
+      src:require('../icons/random.png')
     },
     {
       id: 5,
       name: 'Avocado',
+      src:require('../icons/random.png')
     },
     {
       id: 6,
       name: 'Lemon',
+      src:require('../icons/random.png')
     },
     {
       id: 7,
       name: 'Lime',
+      src:require('../icons/random.png')
     },
     {
         id: 8,
         name: 'Beef',
+        src:require('../icons/random.png')
       },
-      {
-        id: 9,
-        name: 'Lettuce',
-      },
-      {
-        id: 10,
-        name: 'Chicken',
-      },
-      {
-        id: 11,
-        name: 'Tomato',
-      },
-      {
-        id: 12,
-        name: 'Avocado',
-      },
-      {
-        id: 13,
-        name: 'Lemon',
-      },
-      {
-        id: 14,
-        name: 'Lime',
-      }
- 
+    //   {
+    //     id: 9,
+    //     name: 'Lettuce',
+    //     image:require('../icons/random.png')
+    //   },
+    //   {
+    //     id: 10,
+    //     name: 'Chicken',
+    //     image:require('../icons/random.png')
+    //   },
+    //   {
+    //     id: 11,
+    //     name: 'Tomato',
+    //     image:require('../icons/random.png')
+    //   }
   ];
  
+  const getItem = (name) => {
+
+    Alert.alert(name);
+
+  }
+
+  
   const ItemRender = ({ name }) => (
     <View style={styleSheet.item}>
-      <Text style={styleSheet.itemText}>{name}</Text>
+      <Text style={styleSheet.itemText} onPress={()=> getItem(name)}>{name}</Text>
     </View>
   );
  
@@ -72,7 +78,7 @@ const TwoColumn = () => {
     return (
       <View
         style={{
-          height: 10,
+          height: 40,
           width: 10,
           backgroundColor: "white",
         }}
@@ -92,12 +98,25 @@ const TwoColumn = () => {
         columnWrapperStyle={styleSheet.row}
         contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
         data={ANIMAL_NAMES}
-        renderItem={({ item }) => <ItemRender name={item.name} />}
+        
+        renderItem={({ item }) => 
+          
+          (        
+          <Image source={item.src} style={styleSheet.item}/>
+          )
+          // (<ItemRender name={item.name} />)
+            
+            
+        
+        }
+
+
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Separator}
         horizontal={false}
         numColumns={2}
         // showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
 
       />
  
@@ -113,7 +132,7 @@ const styleSheet = StyleSheet.create({
     },
 
   MainContainer: {
-    flex: 0.5,
+    flex: 1,
     backgroundColor: 'white'
   },
  
@@ -127,8 +146,8 @@ const styleSheet = StyleSheet.create({
   item: {
     padding: 8,
     backgroundColor: '#9b7ede',
-    width: '35%',
-    height: 100,
+    width: '40%',
+    height: 130,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
