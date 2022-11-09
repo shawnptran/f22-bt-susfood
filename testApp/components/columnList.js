@@ -1,4 +1,5 @@
-import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text } from 'react-native';
+import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image } from 'react-native';
+
  
 const TwoColumn = () => {
  
@@ -6,60 +7,58 @@ const TwoColumn = () => {
     {
       id: 1,
       name: 'Beef',
+      src:require('../icons/random.png')
     },
     {
       id: 2,
       name: 'Lettuce',
+      src:require('../icons/random.png')
     },
     {
       id: 3,
       name: 'Chicken',
+      src:require('../icons/random.png')
     },
     {
       id: 4,
       name: 'Tomato',
+      src:require('../icons/random.png')
     },
     {
       id: 5,
       name: 'Avocado',
+      src:require('../icons/random.png')
     },
     {
       id: 6,
       name: 'Lemon',
+      src:require('../icons/random.png')
     },
     {
       id: 7,
       name: 'Lime',
+      src:require('../icons/random.png')
     },
     {
         id: 8,
         name: 'Beef',
+        src:require('../icons/random.png')
       },
-      {
-        id: 9,
-        name: 'Lettuce',
-      },
-      {
-        id: 10,
-        name: 'Chicken',
-      },
-      {
-        id: 11,
-        name: 'Tomato',
-      },
-      {
-        id: 12,
-        name: 'Avocado',
-      },
-      {
-        id: 13,
-        name: 'Lemon',
-      },
-      {
-        id: 14,
-        name: 'Lime',
-      }
- 
+    //   {
+    //     id: 9,
+    //     name: 'Lettuce',
+    //     image:require('../icons/random.png')
+    //   },
+    //   {
+    //     id: 10,
+    //     name: 'Chicken',
+    //     image:require('../icons/random.png')
+    //   },
+    //   {
+    //     id: 11,
+    //     name: 'Tomato',
+    //     image:require('../icons/random.png')
+    //   }
   ];
  
   const getItem = (name) => {
@@ -99,7 +98,19 @@ const TwoColumn = () => {
         columnWrapperStyle={styleSheet.row}
         contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
         data={ANIMAL_NAMES}
-        renderItem={({ item }) => <ItemRender name={item.name} />}
+        
+        renderItem={({ item }) => 
+          
+          (        
+          <Image source={item.src} style={styleSheet.item}/>
+          )
+          // (<ItemRender name={item.name} />)
+            
+            
+        
+        }
+
+
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Separator}
         horizontal={false}
