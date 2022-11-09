@@ -67,10 +67,18 @@ const TwoColumn = () => {
 
   }
 
+  const ImageType = ({ image }) => (
+    <View style={styles.image}>
+      <Image source={image}/>
+    </View>
+  );
   
-  const ItemRender = ({ name }) => (
+
+
+  const NameRender = ({ item }) => (
     <View style={styleSheet.item}>
-      <Text style={styleSheet.itemText} onPress={()=> getItem(name)}>{name}</Text>
+      <Text style={styleSheet.itemText} onPress={()=> getItem(item.name)}>{item.name}</Text>
+      {/* <Image source={item.src} />  */}
     </View>
   );
  
@@ -101,9 +109,11 @@ const TwoColumn = () => {
         
         renderItem={({ item }) => 
           
-          (        
-          <Image source={item.src} style={styleSheet.item}/>
-          )
+          // <View>
+            <NameRender item={item} />
+            // <Image source={item.src} style={styleSheet.item}/>
+          // </View>   
+          
           // (<ItemRender name={item.name} />)
             
             
@@ -145,9 +155,9 @@ const styleSheet = StyleSheet.create({
  
   item: {
     padding: 8,
-    backgroundColor: '#9b7ede',
-    width: '40%',
-    height: 130,
+    backgroundColor: '#94C973',
+    width: '43%',
+    height: 135,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
