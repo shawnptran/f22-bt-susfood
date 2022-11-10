@@ -4,8 +4,8 @@ import { Button } from 'react-native-paper';
   
 const AddButton = () => {
   return (
-    <View>
-      <View style={styles.button}>
+    <View style={{flexDirection:'row', alignItems:'flex-start', justifyContent:'center'}}>
+      {/* <View style={styles.button}>
         <Button mode="contained" onPress={() => 
             Alert.alert('button style : contained')}>
           {' '}
@@ -20,15 +20,36 @@ const AddButton = () => {
              Alert.alert('button style : outlined and icon ')}>
           click
         </Button>
+      </View> */}
+      <View style={styles.button}>
+        <Button mode="text" onPress={() => 
+             Alert.alert('button style : text ')}>
+          {' '}
+          All
+        </Button>
       </View>
       <View style={styles.button}>
         <Button mode="text" onPress={() => 
              Alert.alert('button style : text ')}>
           {' '}
-          click
+          Expiring Soon
         </Button>
       </View>
       <View style={styles.button}>
+        <Button mode="text" onPress={() => 
+             Alert.alert('button style : text ')}>
+          {' '}
+          Fridge
+        </Button>
+      </View>
+      <View style={styles.button}>
+        <Button mode="text" onPress={() => 
+             Alert.alert('button style : text ')}>
+          {' '}
+          Pantry
+        </Button>
+      </View>
+      {/* <View style={styles.button}>
         <Button
           mode="contained"
           color="green"
@@ -41,14 +62,14 @@ const AddButton = () => {
         <Button mode="contained" disabled>
           click
         </Button>
-      </View>
+      </View> */}
     </View>
   );
 };
   
 const styles = StyleSheet.create({
   button: {
-    margin: 20,
+    margin: 1,
   },
 });
   

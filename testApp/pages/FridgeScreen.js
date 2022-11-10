@@ -13,9 +13,10 @@ import MyFridgeTabs from '../components/tabBar/tabBar';
 
 const FridgeScreen = () => {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Fridge!</Text>
+      <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+        {/* <Text>Frige!</Text> */}
         {/* <MyFridgeTabs/> */}
+        <AddButton />
       </View>
     );
   }

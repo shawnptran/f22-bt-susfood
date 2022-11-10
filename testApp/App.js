@@ -23,7 +23,7 @@ function MyTabs() {
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <MyTabs />
     </NavigationContainer>
   );
