@@ -3,7 +3,7 @@ import { Text, StyleSheet } from "react-native";
 import { Headline } from 'react-native-paper';
 
 const Hello = () => (
-  <Headline style={styles.title}>Hello, Armaan</Headline>
+  <Headline style={styles.title}>Hello, Shawn</Headline>
 );
 
 const styles = StyleSheet.create({
@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
       justifyContent: "space-between",
       paddingTop: '15%',
       paddingLeft: '10%',
+      color: '#3cb371',
+      fontWeight: 'bold',
+    
     }
 });
 
