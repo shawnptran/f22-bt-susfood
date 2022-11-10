@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -12,11 +12,42 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Search" component={SearchScreen} />
-      <Tab.Screen name="Fridge" component={FridgeScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+    <Tab.Navigator
+      screenOptions = {{
+        tabBarStyle: {height: 80},
+        }} >
+      <Tab.Screen name="Home" component={HomeScreen} options={{
+          tabBarIcon: ({ color }) => (
+            <Image
+              source={require('./homeicon.png')                  
+              }/>
+         ), 
+         tabBarLabel: 'Home'             
+        }}/>
+      <Tab.Screen name="Search" component={SearchScreen} options={{
+          tabBarIcon: ({ color }) => (
+            <Image
+              source={require('./searchicon.png')                  
+              }/>
+         ), 
+         tabBarLabel: 'Search'             
+        }}/>
+      <Tab.Screen name="Fridge" component={FridgeScreen} options={{
+          tabBarIcon: ({ color }) => (
+            <Image
+              source={require('./fridgeicon.png')                  
+              }/>
+         ), 
+         tabBarLabel: 'Fridge'             
+        }}/>
+      <Tab.Screen name="Settings" component={SettingsScreen} options={{
+          tabBarIcon: ({ color }) => (
+            <Image
+              source={require('./settingicon.png')                  
+              }/>
+         ), 
+         tabBarLabel: 'Settings'             
+        }}/>
     </Tab.Navigator>
   );
 }
