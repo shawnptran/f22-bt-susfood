@@ -1,4 +1,4 @@
-import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image } from 'react-native';
+import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 
  
 const TwoColumn = () => {
@@ -40,25 +40,10 @@ const TwoColumn = () => {
       src:require('../icons/random.png')
     },
     {
-        id: 8,
-        name: 'Beef',
-        src:require('../icons/random.png')
-      },
-    //   {
-    //     id: 9,
-    //     name: 'Lettuce',
-    //     image:require('../icons/random.png')
-    //   },
-    //   {
-    //     id: 10,
-    //     name: 'Chicken',
-    //     image:require('../icons/random.png')
-    //   },
-    //   {
-    //     id: 11,
-    //     name: 'Tomato',
-    //     image:require('../icons/random.png')
-    //   }
+      id: 8,
+      name: 'Beef',
+      src:require('../icons/random.png')
+    },
   ];
  
   const getItem = (name) => {
@@ -68,16 +53,14 @@ const TwoColumn = () => {
   }
 
   const ImageType = ({ image }) => (
-    <View style={styles.image}>
+    <View style={styleSheet.item}>
       <Image source={image}/>
     </View>
   );
-  
-
 
   const NameRender = ({ item }) => (
     <View style={styleSheet.item}>
-      <Text style={styleSheet.itemText} onPress={()=> getItem(item.name)}>{item.name}</Text>
+      
       {/* <Image source={item.src} />  */}
     </View>
   );
@@ -108,18 +91,19 @@ const TwoColumn = () => {
         data={ANIMAL_NAMES}
         
         renderItem={({ item }) => 
+          // <View style={styleSheet.item}>
+            // <ImageType image={item.src}/>
+            <View style={styleSheet.item}>
+              <TouchableWithoutFeedback onPress={()=> getItem(item.name)} >
+                <Image source={item.src} style={styleSheet.image} ></Image>
+              </TouchableWithoutFeedback>
+              <Text style={styleSheet.itemText}> {item.name} </Text>
+            </View>
           
-          // <View>
-            <NameRender item={item} />
-            // <Image source={item.src} style={styleSheet.item}/>
-          // </View>   
-          
-          // (<ItemRender name={item.name} />)
-            
-            
-        
-        }
+          // <NameRender item={item} />
 
+
+        }
 
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Separator}
@@ -136,10 +120,10 @@ const TwoColumn = () => {
  
 const styleSheet = StyleSheet.create({
  
-    row: {
-        flex: 1,
-        justifyContent: "space-around"
-    },
+  row: {
+      flex: 1,
+      justifyContent: "space-around"
+  },
 
   MainContainer: {
     flex: 1,
@@ -152,21 +136,29 @@ const styleSheet = StyleSheet.create({
     textAlign: 'center',
     padding: 12
   },
+
+  image: {
+    width: '100%',
+    height: '100%',
+    marginTop: 0,
+  },
  
   item: {
     padding: 8,
     backgroundColor: '#94C973',
     width: '43%',
     height: 135,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
+
   },
  
   itemText: {
     fontSize: 16,
-    color: 'white',
-    textAlign: 'center'
+    color: 'black',
+    textAlign: 'center',
+    marginTop: 11,
   }
  
 });
