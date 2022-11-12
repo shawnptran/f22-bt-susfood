@@ -10,7 +10,13 @@ import SettingsScreen from './pages/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+
+function MyTabs() {  
+  const [homePage, setHome] = useState(true);
+  const [searchPage, setSearch] = useState(false);
+  const [fridgePage, setFridge] = useState(false);
+  const [settingsPage, setSettings] = useState(false);
+
   return (
     <Tab.Navigator 
       screenOptions = {{
