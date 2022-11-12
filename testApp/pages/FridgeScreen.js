@@ -7,14 +7,18 @@ import AddButton from '../components/button';
 import IOTD from '../components/IOTD';
 import Hello from '../components/hello';
 import TestCard from '../components/expiringCard';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+//import MyFridgeTabs from '../components/tabBar/tabBar';
+import FridgeList from '../components/fridge screen tabs/fridgeList';
 
 const FridgeScreen = () => {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Fridge!</Text>
+      <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+        {/* <Text>Frige!</Text> */}
+        {/* <MyFridgeTabs/> */}
+        <AddButton />
       </View>
     );
   }
 
 export default FridgeScreen;
-
