@@ -1,0 +1,44 @@
+{
+    "TestInventory": [
+        {
+          "id": 1,
+          "name": "Beef",
+          "src": "require('../icons/random.png')"
+        },
+        {
+          "id": 2,
+          "name": "Lettuce",
+          "src":"require('../icons/random.png')"
+        },
+        {
+          "id": 3,
+          "name": "Chicken",
+          "src":"require('../icons/random.png')"
+        },
+        {
+          "id": 4,
+          "name": "Tomato",
+          "src":"require('../icons/random.png')"
+        },
+        {
+          "id": 5,
+          "name": "Avocado",
+          "src":"require('../icons/random.png')"
+        },
+        {
+          "id": 6,
+          "name": "Lemon",
+          "src":"require('../icons/random.png')"
+        },
+        {
+          "id": 7,
+          "name": "Lime",
+          "src":"require('../icons/random.png')"
+        },
+        {
+          "id": 8,
+          "name": "Beef",
+          "src":"require('../icons/random.png')"
+        }
+      ]
+}
