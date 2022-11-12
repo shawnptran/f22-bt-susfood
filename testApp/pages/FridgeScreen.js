@@ -8,8 +8,8 @@ import IOTD from '../components/IOTD';
 import Hello from '../components/hello';
 import TestCard from '../components/testCard';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import MyFridgeTabs from '../components/tabBar/tabBar';
-
+//import MyFridgeTabs from '../components/tabBar/tabBar';
+import FridgeList from '../components/fridge screen tabs/fridgeList';
 
 const FridgeScreen = () => {
     return (

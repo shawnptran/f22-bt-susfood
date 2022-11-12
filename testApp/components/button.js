@@ -1,68 +1,88 @@
-import React from 'react';
+
 import { View, StyleSheet, Alert } from 'react-native';
 import { Button } from 'react-native-paper';
-  
-const AddButton = () => {
+import FridgeList from './fridge screen tabs/fridgeList';
+import TwoColumn from './columnList';
+import React, { useState } from 'react';
+
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
+function MyStack() {
   return (
-    <View style={{flexDirection:'row', alignItems:'flex-start', justifyContent:'center'}}>
-      {/* <View style={styles.button}>
-        <Button mode="contained" onPress={() => 
-            Alert.alert('button style : contained')}>
-          {' '}
-          click{' '}
-        </Button>
+    <Stack.Navigator>
+      <Stack.Screen name="FridgeList" component={FridgeList} />
+      {/* <Stack.Screen name="Notifications" component={Notifications} />
+      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Settings" component={Settings} /> */}
+    </Stack.Navigator>
+  );
+}
+
+const AddButton = () => {
+  const [allShow, setAllShow] = useState(true);
+  const [expiringShow, setExpiringShow] = useState(false);
+  const [fridgeShow, setFridgeShow] = useState(false);
+  const [pantryShow, setPantryShow] = useState(false);
+  return (
+    <View style={{flexDirection:'column', alignItems:'flex-start', justifyContent:'center'}}>
+      <View style={{flexDirection:'row', alignItems:'flex-start', justifyContent:'center'}}>
+        
+        <View style={styles.button}>
+          <Button 
+            title="All"
+            onPress={() => {
+              setAllShow(true); setExpiringShow(false); setFridgeShow(false); setPantryShow(false); 
+            } } >
+            {' '}
+            All
+          </Button>   
+        </View>
+
+
+        <View style={styles.button}>
+          <Button 
+            title="Expiring Soon"
+            onPress={() => {
+              setAllShow(false); setExpiringShow(true); setFridgeShow(false); setPantryShow(false); 
+            } } >
+            {' '}
+            Expiring Soon
+          </Button>   
+        </View>
+
+        <View style={styles.button}>
+          <Button 
+            title="Fridge"
+            onPress={() => {
+              setAllShow(false); setExpiringShow(false); setFridgeShow(true); setPantryShow(false); 
+            } } >
+            {' '}
+            Fridge
+          </Button>   
+        </View>
+
+        <View style={styles.button}>
+          <Button 
+            title="Pantry"
+            onPress={() => {
+                setAllShow(false); setExpiringShow(false); setFridgeShow(false); setPantryShow(true); 
+              } } >
+            {' '}
+            Pantry
+          </Button>   
+        </View>
+
       </View>
-      <View style={styles.button}>
-        <Button
-          mode="outlined"
-          icon="camera"
-          onPress={() =>
-             Alert.alert('button style : outlined and icon ')}>
-          click
-        </Button>
-      </View> */}
-      <View style={styles.button}>
-        <Button mode="text" onPress={() => 
-             Alert.alert('button style : text ')}>
-          {' '}
-          All
-        </Button>
-      </View>
-      <View style={styles.button}>
-        <Button mode="text" onPress={() => 
-             Alert.alert('button style : text ')}>
-          {' '}
-          Expiring Soon
-        </Button>
-      </View>
-      <View style={styles.button}>
-        <Button mode="text" onPress={() => 
-             Alert.alert('button style : text ')}>
-          {' '}
-          Fridge
-        </Button>
-      </View>
-      <View style={styles.button}>
-        <Button mode="text" onPress={() => 
-             Alert.alert('button style : text ')}>
-          {' '}
-          Pantry
-        </Button>
-      </View>
-      {/* <View style={styles.button}>
-        <Button
-          mode="contained"
-          color="green"
-          onPress={() =>
-             Alert.alert('button style : coloured and contained ')}>
-          click
-        </Button>
-      </View>
-      <View style={styles.button}>
-        <Button mode="contained" disabled>
-          click
-        </Button>
-      </View> */}
+      {allShow ?
+      ( <FridgeList/> ) : null}
+      {expiringShow ?
+      ( <TwoColumn/> ) : null}
+      {fridgeShow ?
+      ( <FridgeList/> ) : null}
+      {pantryShow ?
+      ( <TwoColumn/> ) : null}
     </View>
   );
 };
