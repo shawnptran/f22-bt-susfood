@@ -12,9 +12,9 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
-    <Tab.Navigator
+    <Tab.Navigator 
       screenOptions = {{
-        tabBarStyle: {height: 80,borderRadius: 50, backgroundColor:"#FFFFFF"},
+        tabBarStyle: {height: 80, borderTopLeftRadius: 50, borderTopRightRadius: 50, backgroundColor:"#FFFFFF", color: "#3cb371", marginTop: -100,}
         }}
        >
       <Tab.Screen name="Home" component={HomeScreen} options={{

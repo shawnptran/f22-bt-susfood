@@ -10,10 +10,12 @@ const styles = StyleSheet.create({
     title: {
       flex: 1,
       justifyContent: "space-between",
-      paddingTop: '15%',
+      paddingTop: '5%',
       paddingLeft: '10%',
       color: '#3cb371',
       fontWeight: 'bold',
+      fontSize: 30,
+      
     
     }
 });
