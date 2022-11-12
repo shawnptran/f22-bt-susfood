@@ -11,7 +11,7 @@ const TestCard = () => {
     {
       id: 2,
       name: 'Lettuce',
-      src:require('../icons/red bell peppers.png')
+      src:require('../icons/redbell.png')
     },
     {
       id: 3,
@@ -52,8 +52,8 @@ const TestCard = () => {
       <View
         style={{
           height: 50,
-          width: 10,
-          backgroundColor: "white",
+          width: 20,
+          backgroundColor: "#f2f2f2",
         }}
       />
     );
@@ -68,9 +68,12 @@ const TestCard = () => {
  
       <FlatList
         data={ANIMAL_NAMES}
+        rowWrapperStyle={styleSheet.column}
+        contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
         renderItem={({ item }) => 
         <View style={styleSheet.item}>
           <Image source={item.src}style={styleSheet.image}></Image>
+          <Text style={styleSheet.foodText}> {item.name}</Text>
         </View>
       }
         keyExtractor={item => item.id}
@@ -87,27 +90,29 @@ const styleSheet = StyleSheet.create({
  
   MainContainer: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: '#f2f2f2',
+    marginLeft: 20
   },
 
   image: {
-    height: 30,
-    width: 30,
+    height: 50,
+    width: 50,
+    marginTop: 0,
   },
  
   titleText: {
     fontSize: 24,
     fontWeight: 'bold',
-    textAlign: 'center',
+    textAlign: 'left',
     padding: 12
   },
  
   item: {
     padding: 8,
     backgroundColor: '#94C973',
-    width: 100,
+    width: 110,
     height: 100,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
   },
@@ -116,8 +121,21 @@ const styleSheet = StyleSheet.create({
     fontSize: 16,
     color: 'white',
     textAlign: 'center'
-  }
- 
+  },
+
+  foodText: {
+    fontSize: 16,
+    color: 'black',
+    textAlign: 'center',
+    marginTop: 11
+  },
+
+  column: {
+    flex: 1,
+    justifyContent: "space-around",
+  },
+  
+
 });
 
 export default TestCard; 

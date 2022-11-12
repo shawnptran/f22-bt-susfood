@@ -52,8 +52,8 @@ const TestCard = () => {
       <View
         style={{
           height: 50,
-          width: 10,
-          backgroundColor: "white",
+          width: 20,
+          backgroundColor: "#f2f2f2",
         }}
       />
     );
@@ -87,25 +87,26 @@ const styleSheet = StyleSheet.create({
  
   MainContainer: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: '#f2f2f2',
+    marginLeft: 20
   },
 
   image: {
-    height: 30,
-    width: 30,
+    height: 50,
+    width: 50,
   },
  
   titleText: {
     fontSize: 24,
     fontWeight: 'bold',
-    textAlign: 'center',
+    textAlign: 'left',
     padding: 12
   },
  
   item: {
     padding: 8,
     backgroundColor: '#94C973',
-    width: 100,
+    width: 110,
     height: 100,
     justifyContent: 'center',
     alignItems: 'center',
