@@ -1,4 +1,5 @@
-import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
+import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, 
+  TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
 import React, { useState, useEffect } from 'react';
  
 const TwoColumn = () => {
@@ -50,18 +51,12 @@ const TwoColumn = () => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
+  const [text, onChangeText] = useState("Use");
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then((response) => response.json())
-      .then((ANIMAL_NAMES) => {
         setFilteredDataSource(ANIMAL_NAMES);
         setMasterDataSource(ANIMAL_NAMES);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  }, [search]);
 
   const searchFilterFunction = (text) => {
     if (text) {
@@ -114,34 +109,28 @@ const TwoColumn = () => {
       <Text style={styleSheet.titleText}>
         testing
       </Text>
-      <TextInput
+      {/* <TextInput
           style={styleSheet.textInputStyle}
-          // onChangeText= {setText}
-          onChangeText={(text) => searchFilterFunction(text)}
-          //  value={search}
-          defaultValue = {text}
+          onChangeText={onChangeText}
+          // value = {search}
           underlineColorAndroid="transparent"
           placeholder="Search Here"
+        /> */}
+      <TextInput
+          style={styleSheet.textInputStyle}
+          onChangeText={(text) => searchFilterFunction(text)}
+          value={search}
+          // underlineColorAndroid="transparent"
+          // placeholder="Search Here"
         />
       <FlatList
         style={{margin: 20}}
         columnWrapperStyle={styleSheet.row}
         contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
         data={filteredDataSource}
-        
-        renderItem={
-          ItemView
-          // ({ item }) => 
-            // <View style={styleSheet.item}>
-            //   <TouchableWithoutFeedback onPress={()=> getItem(item.name)} >
-            //     <Image source={item.src} style={styleSheet.image} ></Image>
-            //   </TouchableWithoutFeedback>
-            //   <Text style={styleSheet.itemText}> {item.name} </Text>
-            // </View>
-        }
-
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Separator}
+        renderItem={ ItemView }
         horizontal={false}
         numColumns={2}
         // showsHorizontalScrollIndicator={false}
