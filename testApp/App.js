@@ -14,40 +14,42 @@ function MyTabs() {
   return (
     <Tab.Navigator
       screenOptions = {{
-        tabBarStyle: {height: 80},
-        }} >
+        tabBarStyle: {height: 80,borderRadius: 50, backgroundColor:"#FFFFFF"},
+        }}
+       >
       <Tab.Screen name="Home" component={HomeScreen} options={{
           tabBarIcon: ({ color }) => (
             <Image
-              source={require('./homeicon.png')                  
+              source={require('./icons/homeicon.png')                  
               }/>
-         ), 
-         tabBarLabel: 'Home'             
+         ),
+         tabBarLabel:() => {return null}       
         }}/>
       <Tab.Screen name="Search" component={SearchScreen} options={{
           tabBarIcon: ({ color }) => (
             <Image
-              source={require('./searchicon.png')                  
+              source={require('./icons/searchicon.png')                  
               }/>
-         ), 
-         tabBarLabel: 'Search'             
+         ),
+         tabBarLabel:() => {return null}             
         }}/>
       <Tab.Screen name="Fridge" component={FridgeScreen} options={{
           tabBarIcon: ({ color }) => (
             <Image
-              source={require('./fridgeicon.png')                  
+              source={require('./icons/fridgeicon.png')                  
               }/>
-         ), 
-         tabBarLabel: 'Fridge'             
+         ),
+         tabBarLabel:() => {return null}    
         }}/>
       <Tab.Screen name="Settings" component={SettingsScreen} options={{
           tabBarIcon: ({ color }) => (
             <Image
-              source={require('./settingicon.png')                  
+              source={require('./icons/settingicon.png')                  
               }/>
-         ), 
-         tabBarLabel: 'Settings'             
-        }}/>
+         ),
+         tabBarLabel:() => {return null}           
+        }}
+      />
     </Tab.Navigator>
   );
 }

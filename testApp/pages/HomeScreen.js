@@ -6,15 +6,16 @@ import { StyleSheet, View, Alert, ScrollView, Image } from 'react-native';
 import AddButton from '../components/button';
 import IOTD from '../components/IOTD';
 import Hello from '../components/hello';
-import TestCard from '../components/testCard';
+import ExpiringCard from '../components/expiringCard';
+import KitchenCard from '../components/kitchenCard';
 
 const HomeScreen = () => {
   return (
     <ScrollView>
     <Hello />
     <IOTD />
-    <TestCard />
-    <TestCard />
+    <ExpiringCard />
+    <KitchenCard />
   </ScrollView>
   );
 }

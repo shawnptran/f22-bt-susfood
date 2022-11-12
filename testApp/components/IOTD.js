@@ -4,10 +4,7 @@ import { StyleSheet, Image } from 'react-native';
 
 const IOTD = () => (
   <Card style={styles.container} > 
-    <Card.Cover Image source={require('../IMG_1322.jpg')}/>
-    <Text style={styles.text}>
-            ITEM OF THE DAY
-    </Text>
+    <Card.Cover Image source={require('../icons/IOTD.png')}/>
   </Card>
 );
 
@@ -19,8 +16,9 @@ const styles = StyleSheet.create({
       margin: '5%',
       marginRight: '10%',
       marginLeft: '10%',
-      borderRadius: 35,
+      borderRadius: 40,
       overflow: 'hidden',
+      height: 170,
     //   elevation: 100, doesn't work
     //   shadowColor: '#52006A', doesn't work
     },
@@ -28,7 +26,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         color: "white",
         position: "absolute", // child
-        bottom: '3%', // position where you want
+        bottom: '15%', // position where you want
         left: '15%',
     },
 
