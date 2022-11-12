@@ -1,7 +1,7 @@
 import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 
  
-const FridgeList = () => {
+const AddList = () => {
 
   const ANIMAL_NAMES = [
     {
@@ -190,5 +190,5 @@ const FridgeList = () => {
   
   });
   
-export default FridgeList;
+export default AddList;
 
