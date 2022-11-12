@@ -1,8 +1,9 @@
-import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
-
+import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
+import React, { useState, useEffect } from 'react';
  
 const TwoColumn = () => {
  
+  const TEMPORARY = [];
   const ANIMAL_NAMES = [
     {
       id: 1,
@@ -53,9 +54,9 @@ const TwoColumn = () => {
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then((response) => response.json())
-      .then((responseJson) => {
-        setFilteredDataSource(responseJson);
-        setMasterDataSource(responseJson);
+      .then((ANIMAL_NAMES) => {
+        setFilteredDataSource(ANIMAL_NAMES);
+        setMasterDataSource(ANIMAL_NAMES);
       })
       .catch((error) => {
         console.error(error);
@@ -63,14 +64,10 @@ const TwoColumn = () => {
   }, []);
 
   const searchFilterFunction = (text) => {
-    // Check if searched text is not blank
     if (text) {
-      // Inserted text is not blank
-      // Filter the masterDataSource and update FilteredDataSource
       const newData = masterDataSource.filter(function (item) {
-        // Applying filter for the inserted text in search bar
-        const itemData = item.title
-          ? item.title.toUpperCase()
+        const itemData = item.name
+          ? item.name.toUpperCase()
           : ''.toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
@@ -78,8 +75,6 @@ const TwoColumn = () => {
       setFilteredDataSource(newData);
       setSearch(text);
     } else {
-      // Inserted text is blank
-      // Update FilteredDataSource with masterDataSource
       setFilteredDataSource(masterDataSource);
       setSearch(text);
     }
@@ -88,50 +83,18 @@ const TwoColumn = () => {
   const ItemView = ({ item }) => {
     return (
       // Flat List Item
-      <Text style={styles.itemStyle} onPress={() => getItem(item)}>
-        {item.id}
-        {'.'}
-        {item.title.toUpperCase()}
-      </Text>
+      <View style={styleSheet.item}>
+        <TouchableWithoutFeedback onPress={()=> getItem(item.name)} >
+          <Image source={item.src} style={styleSheet.image} ></Image>
+        </TouchableWithoutFeedback>
+        <Text style={styleSheet.itemText}> {item.name} </Text>
+      </View>
     );
   };
 
-  const ItemSeparatorView = () => {
-    return (
-      // Flat List Item Separator
-      <View
-        style={{
-          height: 0.5,
-          width: '100%',
-          backgroundColor: '#C8C8C8',
-        }}
-      />
-    );
-  };
-
-  const getItem = (item) => {
-    // Function for click on an item
-    alert('Id : ' + item.id + ' Title : ' + item.title);
-  };
- 
-  // const getItem = (name) => {
-
-  //   Alert.alert(name);
-
-  // }
-
-  const ImageType = ({ image }) => (
-    <View style={styleSheet.item}>
-      <Image source={image}/>
-    </View>
-  );
-
-  const NameRender = ({ item }) => (
-    <View style={styleSheet.item}>
-      
-      {/* <Image source={item.src} />  */}
-    </View>
-  );
+  const getItem = (name) => {
+    Alert.alert(name);
+  }
  
   const Separator = () => {
     return (
@@ -152,31 +115,29 @@ const TwoColumn = () => {
         testing
       </Text>
       <TextInput
-          style={styles.textInputStyle}
+          style={styleSheet.textInputStyle}
+          // onChangeText= {setText}
           onChangeText={(text) => searchFilterFunction(text)}
-          value={search}
+          //  value={search}
+          defaultValue = {text}
           underlineColorAndroid="transparent"
           placeholder="Search Here"
         />
       <FlatList
-        style={{margin:20}}
+        style={{margin: 20}}
         columnWrapperStyle={styleSheet.row}
         contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
-        data={ANIMAL_NAMES}
+        data={filteredDataSource}
         
-        renderItem={({ item }) => 
-          // <View style={styleSheet.item}>
-            // <ImageType image={item.src}/>
-            <View style={styleSheet.item}>
-              <TouchableWithoutFeedback onPress={()=> getItem(item.name)} >
-                <Image source={item.src} style={styleSheet.image} ></Image>
-              </TouchableWithoutFeedback>
-              <Text style={styleSheet.itemText}> {item.name} </Text>
-            </View>
-          
-          // <NameRender item={item} />
-
-
+        renderItem={
+          ItemView
+          // ({ item }) => 
+            // <View style={styleSheet.item}>
+            //   <TouchableWithoutFeedback onPress={()=> getItem(item.name)} >
+            //     <Image source={item.src} style={styleSheet.image} ></Image>
+            //   </TouchableWithoutFeedback>
+            //   <Text style={styleSheet.itemText}> {item.name} </Text>
+            // </View>
         }
 
         keyExtractor={item => item.id}
@@ -238,7 +199,7 @@ const styleSheet = StyleSheet.create({
   textInputStyle: {
     height: 40,
     borderWidth: 1,
-    paddingLeft: 20,
+    padding: 10,
     margin: 5,
     borderColor: '#009688',
     backgroundColor: '#FFFFFF',
