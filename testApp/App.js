@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -11,7 +11,13 @@ import SettingsScreen from './pages/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+
+function MyTabs() {  
+  const [homePage, setHome] = useState(true);
+  const [searchPage, setSearch] = useState(false);
+  const [fridgePage, setFridge] = useState(false);
+  const [settingsPage, setSettings] = useState(false);
+
   return (
     <Tab.Navigator 
       screenOptions = {{

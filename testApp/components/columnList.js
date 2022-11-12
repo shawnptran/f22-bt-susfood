@@ -1,8 +1,10 @@
-import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
-
+import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, 
+  TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
+import React, { useState, useEffect } from 'react';
  
 const TwoColumn = () => {
  
+  const TEMPORARY = [];
   const ANIMAL_NAMES = [
     {
       id: 1,
@@ -45,25 +47,49 @@ const TwoColumn = () => {
       src:require('../icons/random.png')
     },
   ];
- 
+
+  const [search, setSearch] = useState('');
+  const [filteredDataSource, setFilteredDataSource] = useState([]);
+  const [masterDataSource, setMasterDataSource] = useState([]);
+  const [text, onChangeText] = useState("Use");
+
+  useEffect(() => {
+        setFilteredDataSource(ANIMAL_NAMES);
+        setMasterDataSource(ANIMAL_NAMES);
+  }, []);
+
+  const searchFilterFunction = (text) => {
+    if (text) {
+      const newData = masterDataSource.filter(function (item) {
+        const itemData = item.name
+          ? item.name.toUpperCase()
+          : ''.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      setFilteredDataSource(newData);
+      setSearch(text);
+    } else {
+      setFilteredDataSource(masterDataSource);
+      setSearch(text);
+    }
+  };
+
+  const ItemView = ({ item }) => {
+    return (
+      // Flat List Item
+      <View style={styleSheet.item}>
+        <TouchableWithoutFeedback onPress={()=> getItem(item.name)} >
+          <Image source={item.src} style={styleSheet.image} ></Image>
+        </TouchableWithoutFeedback>
+        <Text style={styleSheet.itemText}> {item.name} </Text>
+      </View>
+    );
+  };
+
   const getItem = (name) => {
-
     Alert.alert(name);
-
   }
-
-  const ImageType = ({ image }) => (
-    <View style={styleSheet.item}>
-      <Image source={image}/>
-    </View>
-  );
-
-  const NameRender = ({ item }) => (
-    <View style={styleSheet.item}>
-      
-      {/* <Image source={item.src} />  */}
-    </View>
-  );
  
   const Separator = () => {
     return (
@@ -83,30 +109,28 @@ const TwoColumn = () => {
       <Text style={styleSheet.titleText}>
         testing
       </Text>
- 
+      {/* <TextInput
+          style={styleSheet.textInputStyle}
+          onChangeText={onChangeText}
+          // value = {search}
+          underlineColorAndroid="transparent"
+          placeholder="Search Here"
+        /> */}
+      <TextInput
+          style={styleSheet.textInputStyle}
+          onChangeText={(text) => searchFilterFunction(text)}
+          value={search}
+          underlineColorAndroid="transparent"
+          placeholder="Search Here"
+        />
       <FlatList
-        style={{margin:20}}
+        style={{margin: 20}}
         columnWrapperStyle={styleSheet.row}
-        contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
-        data={ANIMAL_NAMES}
-        
-        renderItem={({ item }) => 
-          // <View style={styleSheet.item}>
-            // <ImageType image={item.src}/>
-            <View style={styleSheet.item}>
-              <TouchableWithoutFeedback onPress={()=> getItem(item.name)} >
-                <Image source={item.src} style={styleSheet.image} ></Image>
-              </TouchableWithoutFeedback>
-              <Text style={styleSheet.itemText}> {item.name} </Text>
-            </View>
-          
-          // <NameRender item={item} />
-
-
-        }
-
+        contentContainerStyle={{flexGrow: 1, justifyContent: 'flex-start', paddingBottom: 115}}
+        data={filteredDataSource}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Separator}
+        renderItem={ ItemView }
         horizontal={false}
         numColumns={2}
         // showsHorizontalScrollIndicator={false}
@@ -123,6 +147,7 @@ const styleSheet = StyleSheet.create({
   row: {
       flex: 1,
       justifyContent: "space-around"
+      
   },
 
   MainContainer: {
@@ -159,7 +184,16 @@ const styleSheet = StyleSheet.create({
     color: 'black',
     textAlign: 'center',
     marginTop: 11,
-  }
+  },
+
+  textInputStyle: {
+    height: 40,
+    borderWidth: 1,
+    padding: 10,
+    margin: 5,
+    borderColor: '#009688',
+    backgroundColor: '#FFFFFF',
+  },
  
 });
 
