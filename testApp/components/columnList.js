@@ -56,7 +56,7 @@ const TwoColumn = () => {
   useEffect(() => {
         setFilteredDataSource(ANIMAL_NAMES);
         setMasterDataSource(ANIMAL_NAMES);
-  }, [search]);
+  }, []);
 
   const searchFilterFunction = (text) => {
     if (text) {
@@ -120,13 +120,13 @@ const TwoColumn = () => {
           style={styleSheet.textInputStyle}
           onChangeText={(text) => searchFilterFunction(text)}
           value={search}
-          // underlineColorAndroid="transparent"
-          // placeholder="Search Here"
+          underlineColorAndroid="transparent"
+          placeholder="Search Here"
         />
       <FlatList
         style={{margin: 20}}
         columnWrapperStyle={styleSheet.row}
-        contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
+        contentContainerStyle={{flexGrow: 1, justifyContent: 'flex-start', paddingBottom: 115}}
         data={filteredDataSource}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Separator}
@@ -147,6 +147,7 @@ const styleSheet = StyleSheet.create({
   row: {
       flex: 1,
       justifyContent: "space-around"
+      
   },
 
   MainContainer: {
