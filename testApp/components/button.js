@@ -1,24 +1,28 @@
-
 import { View, StyleSheet, Alert } from 'react-native';
 import { Button } from 'react-native-paper';
+
+import AddList from './fridge screen tabs/allList';
+import ExpiringList from './fridge screen tabs/expiringList';
 import FridgeList from './fridge screen tabs/fridgeList';
-import TwoColumn from './columnList';
+import PantryList from './fridge screen tabs/pantryList';
+
+
 import React, { useState } from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="FridgeList" component={FridgeList} />
-      {/* <Stack.Screen name="Notifications" component={Notifications} />
-      <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="Settings" component={Settings} /> */}
-    </Stack.Navigator>
-  );
-}
+// function MyStack() {
+//   return (
+//     <Stack.Navigator>
+//       <Stack.Screen name="FridgeList" component={FridgeList} />
+//       {/* <Stack.Screen name="Notifications" component={Notifications} />
+//       <Stack.Screen name="Profile" component={Profile} />
+//       <Stack.Screen name="Settings" component={Settings} /> */}
+//     </Stack.Navigator>
+//   );
+// }
 
 const AddButton = () => {
   const [allShow, setAllShow] = useState(true);
@@ -76,13 +80,13 @@ const AddButton = () => {
 
       </View>
       {allShow ?
-      ( <FridgeList/> ) : null}
+      ( <AddList/> ) : null}
       {expiringShow ?
-      ( <TwoColumn/> ) : null}
+      ( <ExpiringList/> ) : null}
       {fridgeShow ?
       ( <FridgeList/> ) : null}
       {pantryShow ?
-      ( <TwoColumn/> ) : null}
+      ( <PantryList/> ) : null}
     </View>
   );
 };

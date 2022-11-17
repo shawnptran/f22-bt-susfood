@@ -2,7 +2,7 @@ import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item,
   TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
 import React, { useState, useEffect } from 'react';
  
-const AddList = () => {
+const MeatsList = () => {
  
   const TEMPORARY = [];
   const ANIMAL_NAMES = [
@@ -18,12 +18,7 @@ const AddList = () => {
       src:require('../../icons/random.png'),
       color: '#FFED9E'
     },
-    {
-      id: 3,
-      name: 'Bananas',
-      src:require('../../icons/bananas.png'),
-      color: '#FFE58E'
-    },
+    
     {
       id: 4,
       name: 'Grapes',
@@ -217,4 +212,4 @@ const styleSheet = StyleSheet.create({
  
 });
 
-export default AddList; 
+export default MeatsList; 
