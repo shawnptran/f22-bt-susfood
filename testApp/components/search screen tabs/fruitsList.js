@@ -1,85 +1,106 @@
-import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
-
+import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, 
+  TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
+import React, { useState, useEffect } from 'react';
  
 const FruitsList = () => {
-
+ 
+  const TEMPORARY = [];
   const ANIMAL_NAMES = [
-    {
-      id: 1,
-      name: 'Beef',
-      src:require('../../icons/random.png'),
-      expire: 1
-    },
+    
     {
       id: 2,
-      name: 'Lettuce',
+      name: 'Lemons',
       src:require('../../icons/random.png'),
-      expire: 1
-  
+      color: '#FFED9E'
     },
     {
       id: 3,
-      name: 'Chicken',
-      src:require('../../icons/random.png'),
-      expire: 1
-  
+      name: 'Bananas',
+      src:require('../../icons/bananas.png'),
+      color: '#FFE58E'
     },
     {
       id: 4,
-      name: 'Tomato',
+      name: 'Grapes',
       src:require('../../icons/random.png'),
-      expire: 1
-  
+      color: '#D2A0E8'
     },
     {
       id: 5,
-      name: 'Avocado',
+      name: 'Pineapple',
       src:require('../../icons/random.png'),
-      expire: 0
-  
+      color: '#FFDE99'
     },
     {
       id: 6,
-      name: 'Lemon',
+      name: 'Watermelon',
       src:require('../../icons/random.png'),
-      expire: 0
-  
+      color: '#94E7B5'
     },
     {
       id: 7,
       name: 'Lime',
       src:require('../../icons/random.png'),
-      expire: 0
-  
+      color: '#FFFFFF'
     },
     {
       id: 8,
       name: 'Beef',
       src:require('../../icons/random.png'),
-      expire: 0
-  
+      color: '#FFFFFF'
     },
   ];
-  
+
+  const [search, setSearch] = useState('');
+  const [filteredDataSource, setFilteredDataSource] = useState([]);
+  const [masterDataSource, setMasterDataSource] = useState([]);
+  const [text, onChangeText] = useState("Use");
+
+  useEffect(() => {
+        setFilteredDataSource(ANIMAL_NAMES);
+        setMasterDataSource(ANIMAL_NAMES);
+  }, []);
+
+  const searchFilterFunction = (text) => {
+    if (text) {
+      const newData = masterDataSource.filter(function (item) {
+        const itemData = item.name
+          ? item.name.toUpperCase()
+          : ''.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      setFilteredDataSource(newData);
+      setSearch(text);
+    } else {
+      setFilteredDataSource(masterDataSource);
+      setSearch(text);
+    }
+  };
+
+  const ItemView = ({ item }) => {
+    return (
+      // Flat List Item
+      <View style={{
+        adding: 8,
+        backgroundColor: item.color,
+        width: '43%',
+        height: 135,
+        alignItems: 'center',
+        borderRadius: 30,
+        }}>
+        <TouchableWithoutFeedback onPress={()=> getItem(item.name)} >
+          <Image source={item.src} style={styleSheet.image} ></Image>
+        </TouchableWithoutFeedback>
+        <Text style={styleSheet.itemText}> {item.name} </Text>
+      </View>
+    );
+  };
+
   const getItem = (name) => {
-  
     Alert.alert(name);
-  
   }
-  
-  const ImageType = ({ image }) => (
-    <View style={styleSheet.item}>
-      <Image source={image}/>
-    </View>
-  );
-  
-  const NameRender = ({ item }) => (
-    <View style={styleSheet.item}>
-      
-      {/* <Image source={item.src} />  */}
-    </View>
-  );
-  
+ 
   const Separator = () => {
     return (
       <View
@@ -91,85 +112,75 @@ const FruitsList = () => {
       />
     );
   }
-  
-  
-  
-  function filterArray(array,status){
-    return array.filter(item => item.expire == status);
-  }
-  
-  const statusOneArray = filterArray(ANIMAL_NAMES, 1);
-  
+ 
   return (
     <SafeAreaView style={styleSheet.MainContainer}>
-  
+ 
       <Text style={styleSheet.titleText}>
         testing
       </Text>
-  
+      {/* <TextInput
+          style={styleSheet.textInputStyle}
+          onChangeText={onChangeText}
+          // value = {search}
+          underlineColorAndroid="transparent"
+          placeholder="Search Here"
+        /> */}
+      <TextInput
+          style={styleSheet.textInputStyle}
+          onChangeText={(text) => searchFilterFunction(text)}
+          value={search}
+          underlineColorAndroid="transparent"
+          placeholder="Search Here"
+        />
       <FlatList
-        style={{margin:20}}
+        style={{margin: 20}}
         columnWrapperStyle={styleSheet.row}
-        contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
-      //  const currArr = {ANIMAL_NAMES}
-        data = {statusOneArray}
-       // const input = {data.filter(isThree)}
-     //    data = {data.filter(function(ANIMAL_NAMES){return item.id == 3;})}
-  
-        renderItem={({ item}) => 
-  
-          // <View style={styleSheet.item}>
-            // <ImageType image={item.src}/>
-            <View style={styleSheet.item}>
-              <TouchableWithoutFeedback onPress={()=> getItem(item.name)} >
-                <Image source={item.src} style={styleSheet.image} ></Image>
-              </TouchableWithoutFeedback>
-              <Text style={styleSheet.itemText}> {item.name} </Text>
-            </View>
-          
-          // <NameRender item={item} />
-  
-  
-        }
-  
+        contentContainerStyle={{flexGrow: 1, justifyContent: 'flex-start', paddingBottom: 115}}
+        data={filteredDataSource}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Separator}
+        renderItem={ ItemView }
         horizontal={false}
         numColumns={2}
         // showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-  
+
       />
-  
+ 
     </SafeAreaView>
   );
-  }
-  
-  const styleSheet = StyleSheet.create({
-  
+}
+ 
+const styleSheet = StyleSheet.create({
+ 
   row: {
       flex: 1,
       justifyContent: "space-around"
+      
   },
-  
+
   MainContainer: {
     flex: 1,
     backgroundColor: 'white'
   },
-  
+ 
   titleText: {
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
     padding: 12
   },
-  
+
   image: {
-    width: '100%',
-    height: '100%',
-    marginTop: 0,
+    width: '52%',
+    height: '52%',
+    // position: 'center',
+    // position: 'absolute', 
+    resizeMode: 'contain',
+    marginTop: '19%',
   },
-  
+ 
   item: {
     padding: 8,
     backgroundColor: '#94C973',
@@ -178,17 +189,27 @@ const FruitsList = () => {
     // justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
-  
+
   },
-  
+ 
   itemText: {
     fontSize: 16,
     color: 'black',
     textAlign: 'center',
-    marginTop: 11,
-  }
-  
-  });
-  
-export default FruitsList;
+    marginTop: 40,
+  },
 
+  textInputStyle: {
+    height: 40,
+    width: '80%',
+    borderRadius: 20,
+    borderWidth: 1,
+    padding: 10,
+    margin: 5,
+    borderColor: '#009688',
+    backgroundColor: '#FFFFFF',
+  },
+ 
+});
+
+export default FruitsList; 

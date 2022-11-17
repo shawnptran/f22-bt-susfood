@@ -12,13 +12,11 @@ import CustomAlert from '../components/customAlert';
 
 const SearchScreen = () => {
     return (
-      // <ScrollView >
-        <View style={styles.container}> 
-        <AddButtonSearch/>
-          <TwoColumn />
-          {/* <CustomAlert /> */}
+       
+        <View style={{flex: 1, justifyContent: 'flex-start', alignItems: 'center'}}> 
+          <AddButtonSearch/>
         </View>
-      // </ScrollView>
+       
     );
   }
 
