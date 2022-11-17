@@ -6,37 +6,44 @@ const TestCard = () => {
     {
       id: 1,
       name: 'Beef',
-      src:require('../icons/bananas.png')
+      src:require('../icons/bananas.png'),
+      color: '#FFED9E'
     },
     {
       id: 2,
       name: 'Lettuce',
-      src:require('../icons/mangos.png')
+      src:require('../icons/mangos.png'),
+      color: '#FFCE65'
     },
     {
       id: 3,
-      name: 'Chicken',
-      src:require('../icons/strawberries.png')
+      name: 'Strawberries',
+      src:require('../icons/strawberries.png'),
+      color: '#FF928C'
     },
     {
       id: 4,
       name: 'Tomato',
-      src:require('../icons/random.png')
+      src:require('../icons/random.png'),
+      color: '#FFED9E'
     },
     {
       id: 5,
       name: 'Avocado',
-      src:require('../icons/random.png')
+      src:require('../icons/random.png'),
+      color: '#FFED9E'
     },
     {
       id: 6,
       name: 'Lemon',
-      src:require('../icons/random.png')
+      src:require('../icons/random.png'),
+      color: '#FFED9E'
     },
     {
       id: 7,
       name: 'Lime',
-      src:require('../icons/random.png')
+      src:require('../icons/random.png'),
+      color: '#FFED9E'
     }
  
   ];
@@ -69,7 +76,15 @@ const TestCard = () => {
       <FlatList
         data={ANIMAL_NAMES}
         renderItem={({ item }) => 
-        <View style={styleSheet.item}>
+        <View style={{
+          padding: 8,
+          backgroundColor: item.color,
+          width: 110,
+          height: 100,
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderRadius: 30,
+        }}>
           <Image source={item.src}style={styleSheet.image}></Image>
         </View>
       }
@@ -112,6 +127,8 @@ const styleSheet = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 30,
   },
+
+  
  
   itemText: {
     fontSize: 16,
