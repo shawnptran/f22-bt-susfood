@@ -8,43 +8,51 @@ const TwoColumn = () => {
   const ANIMAL_NAMES = [
     {
       id: 1,
-      name: 'Beef',
-      src:require('../icons/random.png')
+      name: 'Apple',
+      src:require('../icons/apple.png'),
+      color: '#FFA8A3'
     },
     {
       id: 2,
-      name: 'Lettuce',
-      src:require('../icons/random.png')
+      name: 'Lemons',
+      src:require('../icons/random.png'),
+      color: '#FFED9E'
     },
     {
       id: 3,
-      name: 'Chicken',
-      src:require('../icons/random.png')
+      name: 'Bananas',
+      src:require('../icons/bananas.png'),
+      color: '#FFE58E'
     },
     {
       id: 4,
-      name: 'Tomato',
-      src:require('../icons/random.png')
+      name: 'Grapes',
+      src:require('../icons/random.png'),
+      color: '#D2A0E8'
     },
     {
       id: 5,
-      name: 'Avocado',
-      src:require('../icons/random.png')
+      name: 'Pineapple',
+      src:require('../icons/random.png'),
+      color: '#FFDE99'
     },
     {
       id: 6,
-      name: 'Lemon',
-      src:require('../icons/random.png')
+      name: 'Watermelon',
+      src:require('../icons/random.png'),
+      color: '#94E7B5'
     },
     {
       id: 7,
       name: 'Lime',
-      src:require('../icons/random.png')
+      src:require('../icons/random.png'),
+      color: '#FFFFFF'
     },
     {
       id: 8,
       name: 'Beef',
-      src:require('../icons/random.png')
+      src:require('../icons/random.png'),
+      color: '#FFFFFF'
     },
   ];
 
@@ -78,7 +86,14 @@ const TwoColumn = () => {
   const ItemView = ({ item }) => {
     return (
       // Flat List Item
-      <View style={styleSheet.item}>
+      <View style={{
+        adding: 8,
+        backgroundColor: item.color,
+        width: '43%',
+        height: 135,
+        alignItems: 'center',
+        borderRadius: 30,
+        }}>
         <TouchableWithoutFeedback onPress={()=> getItem(item.name)} >
           <Image source={item.src} style={styleSheet.image} ></Image>
         </TouchableWithoutFeedback>
@@ -163,9 +178,12 @@ const styleSheet = StyleSheet.create({
   },
 
   image: {
-    width: '100%',
-    height: '100%',
-    marginTop: 0,
+    width: '52%',
+    height: '52%',
+    // position: 'center',
+    // position: 'absolute', 
+    resizeMode: 'contain',
+    marginTop: '19%',
   },
  
   item: {
@@ -183,11 +201,13 @@ const styleSheet = StyleSheet.create({
     fontSize: 16,
     color: 'black',
     textAlign: 'center',
-    marginTop: 11,
+    marginTop: 40,
   },
 
   textInputStyle: {
     height: 40,
+    width: '80%',
+    borderRadius: 20,
     borderWidth: 1,
     padding: 10,
     margin: 5,

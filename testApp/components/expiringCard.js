@@ -5,38 +5,45 @@ const TestCard = () => {
   const ANIMAL_NAMES = [
     {
       id: 1,
-      name: 'Beef',
-      src:require('../icons/apple.png')
+      name: 'Apple',
+      src:require('../icons/apple.png'),
+      color: '#FFA8A3'
     },
     {
       id: 2,
-      name: 'Lettuce',
-      src:require('../icons/redbell.png')
+      name: 'Red Bell Peppers',
+      src:require('../icons/redbell.png'),
+      color: '#FFC0BC'
     },
     {
       id: 3,
-      name: 'Chicken',
-      src:require('../icons/zucchini.png')
+      name: 'Zucchini',
+      src:require('../icons/zucchini.png'),
+      color: '#D4EEB0'
     },
     {
       id: 4,
       name: 'Tomato',
-      src:require('../icons/random.png')
+      src:require('../icons/random.png'),
+      color: '#FF928C'
     },
     {
       id: 5,
       name: 'Avocado',
-      src:require('../icons/random.png')
+      src:require('../icons/random.png'),
+      color: '#D4EEB0'
     },
     {
       id: 6,
       name: 'Lemon',
-      src:require('../icons/random.png')
+      src:require('../icons/random.png'),
+      color: '#FFED9E'
     },
     {
       id: 7,
       name: 'Lime',
-      src:require('../icons/random.png')
+      src:require('../icons/random.png'),
+      color: '#BAECB2'
     }
  
   ];
@@ -71,7 +78,15 @@ const TestCard = () => {
         rowWrapperStyle={styleSheet.column}
         contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
         renderItem={({ item }) => 
-        <View style={styleSheet.item}>
+        <View style={{
+          padding: 8,
+          backgroundColor: item.color,
+          width: 110,
+          height: 100,
+          // justifyContent: 'center',
+          alignItems: 'center',
+          borderRadius: 30,
+        }}>
           <Image source={item.src}style={styleSheet.image}></Image>
           <Text style={styleSheet.foodText}> {item.name}</Text>
         </View>
