@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, Alert, ScrollView, Image } from 'react-native';
-import AddButton from '../components/button';
+import AddButtonSearch from '../components/buttonSearch';
 import IOTD from '../components/IOTD';
 import Hello from '../components/hello';
 import TestCard from '../components/expiringCard';
@@ -14,7 +14,7 @@ const SearchScreen = () => {
     return (
       // <ScrollView >
         <View style={styles.container}> 
-          <Text>Search!</Text>
+        <AddButtonSearch/>
           <TwoColumn />
           {/* <CustomAlert /> */}
         </View>
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    //alignItems: 'center',
+    // alignItems: 'center',
     backgroundColor: '#F5FCFF'
   }
 })

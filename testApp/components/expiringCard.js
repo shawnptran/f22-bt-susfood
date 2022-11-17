@@ -95,8 +95,8 @@ const styleSheet = StyleSheet.create({
   },
 
   image: {
-    height: 50,
-    width: 50,
+    height: '50%',
+    width: '50%',
     marginTop: 0,
   },
  
