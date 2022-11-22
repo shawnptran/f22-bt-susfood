@@ -13,7 +13,7 @@ import CustomAlert from '../components/customAlert';
 const SearchScreen = () => {
     return (
       // <ScrollView >
-        <View style={styles.container}> 
+        <View style={styles.container}> x
           <TwoColumn />
           {/* <CustomAlert /> */}
         </View>
