@@ -162,7 +162,8 @@ import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item,
   
     MainContainer: {
       flex: 1,
-      backgroundColor: 'white'
+      backgroundColor: 'white',
+      alignItems: 'center',
     },
    
     titleText: {
@@ -201,11 +202,10 @@ import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item,
   
     textInputStyle: {
       height: 40,
-      width: '80%',
+      width: 300,
       borderRadius: 20,
       borderWidth: 1,
       padding: 10,
-      margin: 5,
       borderColor: '#009688',
       backgroundColor: '#FFFFFF',
     },

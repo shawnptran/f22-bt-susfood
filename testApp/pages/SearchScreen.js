@@ -13,7 +13,7 @@ import CustomAlert from '../components/customAlert';
 const SearchScreen = () => {
     return (
        
-        <View style={{flex: 1, justifyContent: 'flex-start', alignItems: 'center'}}> 
+        <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}> 
           <AddButtonSearch/>
         </View>
        
@@ -21,12 +21,3 @@ const SearchScreen = () => {
   }
 
 export default SearchScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    // alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  }
-})

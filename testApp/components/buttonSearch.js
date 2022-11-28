@@ -11,6 +11,7 @@ import React, { useState } from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import TwoColumn from './columnList';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Stack = createStackNavigator();
 
@@ -23,7 +24,7 @@ const AddButtonSearch = () => {
     return (
       <View style={{flexDirection:'column', alignItems:'flex-start', justifyContent:'center'}}>
         <View style={{flexDirection:'row', alignItems:'flex-start', justifyContent:'center'}}>
-          
+          <ScrollView horizontal={true}>
         <View style={styles.button}>
             <Button 
               title="All"
@@ -79,7 +80,7 @@ const AddButtonSearch = () => {
               Dairy
             </Button>   
           </View>
-  
+          </ScrollView>
         </View>
         {allShow ?
         ( <AllList/> ) : null}

@@ -167,7 +167,8 @@ const styleSheet = StyleSheet.create({
 
   MainContainer: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    alignItems: 'center',
   },
  
   titleText: {
@@ -206,11 +207,10 @@ const styleSheet = StyleSheet.create({
 
   textInputStyle: {
     height: 40,
-    width: '80%',
+    width: 300,
     borderRadius: 20,
     borderWidth: 1,
     padding: 10,
-    margin: 5,
     borderColor: '#009688',
     backgroundColor: '#FFFFFF',
   },
