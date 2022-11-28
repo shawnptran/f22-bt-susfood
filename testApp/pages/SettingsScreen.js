@@ -16,6 +16,7 @@ const SettingsScreen = () => {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         {/* <BottomModal /> */}
         <Example />
+        {/* <TestModal2 /> */}
       </View>
     );
   }

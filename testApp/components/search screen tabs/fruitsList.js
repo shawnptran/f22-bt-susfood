@@ -2,7 +2,7 @@ import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item,
   TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
 import React, { useState, useEffect } from 'react';
  
-const ExpiringList = () => {
+const FruitsList = () => {
  
   const TEMPORARY = [];
   const ANIMAL_NAMES = [
@@ -212,4 +212,4 @@ const styleSheet = StyleSheet.create({
  
 });
 
-export default ExpiringList; 
+export default FruitsList; 

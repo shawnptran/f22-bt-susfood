@@ -2,11 +2,16 @@ import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item,
   TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
 import React, { useState, useEffect } from 'react';
  
-const ExpiringList = () => {
+const AllList = () => {
  
   const TEMPORARY = [];
   const ANIMAL_NAMES = [
-    
+    {
+      id: 1,
+      name: 'Apple',
+      src:require('../../icons/apple.png'),
+      color: '#FFA8A3'
+    },
     {
       id: 2,
       name: 'Lemons',
@@ -212,4 +217,4 @@ const styleSheet = StyleSheet.create({
  
 });
 
-export default ExpiringList; 
+export default AllList; 

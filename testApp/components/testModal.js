@@ -1,21 +1,28 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { SafeAreaView, TouchableOpacity, Text, StyleSheet } from "react-native";
 import BottomSheet from "react-native-gesture-bottom-sheet";
+import IOTD from "./IOTD";
 
 const Example = () => {
   // Needed in order to use .show()
   const bottomSheet = useRef();
+  const [testItem, setTestItem] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
-      <BottomSheet hasDraggableIcon ref={bottomSheet} height={600} />
+      <BottomSheet hasDraggableIcon ref={bottomSheet} height={670} />
       <TouchableOpacity
         style={styles.button}
-        onPress={() => bottomSheet.current.show()}
+        onPress={() => 
+          bottomSheet.current.show()}
+          // {setTestItem(true)}}
       >
         <Text style={styles.text}>Open modal</Text>
       </TouchableOpacity>
+      {/* {testItem ?
+      ( <IOTD/> ) : null} */}
     </SafeAreaView>
+    
   );
 };
 

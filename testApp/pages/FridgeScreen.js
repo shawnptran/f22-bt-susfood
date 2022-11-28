@@ -9,7 +9,6 @@ import Hello from '../components/hello';
 import TestCard from '../components/expiringCard';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 //import MyFridgeTabs from '../components/tabBar/tabBar';
-import FridgeList from '../components/fridge screen tabs/fridgeList';
 
 const FridgeScreen = () => {
     return (
