@@ -10,7 +10,9 @@ const Example = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <BottomSheet hasDraggableIcon ref={bottomSheet} height={670} />
+      <BottomSheet hasDraggableIcon ref={bottomSheet} height={670}>
+        <IOTD/>
+      </BottomSheet>
       <TouchableOpacity
         style={styles.button}
         onPress={() => 
