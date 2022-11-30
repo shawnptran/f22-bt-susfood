@@ -55,7 +55,7 @@ const AddButtonSearch = () => {
                 setAllShow(false); setExpiringShow(false); setFridgeShow(true); setPantryShow(false); setDairyShow(false);
               } } >
               {' '}
-              Vegetables
+              Veggies
             </Button>   
           </View>
   
