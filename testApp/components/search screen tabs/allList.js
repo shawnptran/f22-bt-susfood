@@ -2,6 +2,7 @@ import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item,
   TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
 import React, { useState, useEffect } from 'react';
  
+
 const AllList = () => {
  
   const TEMPORARY = [];

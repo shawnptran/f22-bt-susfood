@@ -11,20 +11,18 @@ const Example = () => {
   return (
     <SafeAreaView style={styles.container}>
       <BottomSheet hasDraggableIcon ref={bottomSheet} height={670}>
-        <IOTD/>
+        <IOTD />
       </BottomSheet>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => 
-          bottomSheet.current.show()}
-          // {setTestItem(true)}}
+        onPress={() => bottomSheet.current.show()}
+        // {setTestItem(true)}}
       >
         <Text style={styles.text}>Open modal</Text>
       </TouchableOpacity>
       {/* {testItem ?
       ( <IOTD/> ) : null} */}
     </SafeAreaView>
-    
   );
 };
 
