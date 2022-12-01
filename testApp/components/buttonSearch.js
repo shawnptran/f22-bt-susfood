@@ -36,7 +36,6 @@ const AddButtonSearch = () => {
             />
             <View style={styles.SeparatorLine} />
           </TouchableOpacity>
-
           <TouchableOpacity style={styles.FacebookStyle} activeOpacity={0.5}
           onPress={() => {
             setAllShow(false); setExpiringShow(true); setFridgeShow(false); setPantryShow(false); setDairyShow(false);
@@ -80,7 +79,6 @@ const AddButtonSearch = () => {
             />
             <View style={styles.SeparatorLine} />
           </TouchableOpacity>
-          
           
           </ScrollView>
         </View>

@@ -1,26 +1,72 @@
 import React, { useRef, useState } from "react";
-import { SafeAreaView, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { SafeAreaView, TouchableOpacity, Text, StyleSheet, View, Image } from "react-native";
 import BottomSheet from "react-native-gesture-bottom-sheet";
+import { Title, ProgressBar, Colors, MD3Colors } from "react-native-paper";
 import IOTD from "./IOTD";
+import { LinearGradient } from "expo-linear-gradient";
 
 const Example = () => {
-  // Needed in order to use .show()
-  const bottomSheet = useRef();
-  const [testItem, setTestItem] = useState(false);
 
+  const bottomSheet = useRef();
   return (
     <SafeAreaView style={styles.container}>
-      <BottomSheet hasDraggableIcon ref={bottomSheet} height={670} />
+      <BottomSheet hasDraggableIcon ref={bottomSheet} height={670} sheetBackgroundColor={"#FFEF87"} style={styles.modal}>
+        <View style={styles.topContainer}>
+        <Image
+            style={styles.mainPic}
+            resizeMode='contain'
+            source={require('../icons/realbanana.png')}
+          />
+        </View>
+        <View style={styles.bottomContainer}>
+          <Title
+            style={styles.title}>
+              Bananas</Title>
+          <Text
+            style={styles.calories}>
+              105 cal</Text>
+          <Text></Text>
+          <Text
+            style={styles.howToStore}>
+            How to Store</Text>
+          <Text
+            style={styles.textBody}>
+            Bananas should be kept in a dry environment, away from sunlight for the longest shelf life</Text>
+          <Text
+          style={styles.useWithin}>
+            Use within 3 days</Text>
+            <LinearGradient
+              colors={['#A7EBA5', '#D3751D']}
+              start={{ x: 0, y: 1 }}
+              end={{ x: 1, y: 1 }}
+              style={styles.progressBar}>            
+              <Text></Text>
+            {/* </ProgressBar> */}
+            </LinearGradient>
+            <Text style={styles.freshAged}>Fresh                                                                                              Aged</Text>
+        
+            <View style={styles.condition}>
+              <View style={styles.eachCondition}>
+                <Text>RNDON TEXT</Text>
+              </View>
+              <View style={styles.eachCondition}>
+                <Text>RNDON TEXT</Text>
+              </View>
+              <View style={styles.eachCondition}>
+                <Text>RNDON TEXT</Text>
+              </View>
+            </View>
+        
+        </View>
+        
+      </BottomSheet>
       <TouchableOpacity
         style={styles.button}
         onPress={() => 
-          bottomSheet.current.show()}
-          // {setTestItem(true)}}
-      >
+          bottomSheet.current.show()}>
         <Text style={styles.text}>Open modal</Text>
       </TouchableOpacity>
-      {/* {testItem ?
-      ( <IOTD/> ) : null} */}
+
     </SafeAreaView>
     
   );
@@ -51,6 +97,99 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  modal: {
+    sheetBackgroundColor: "#FFEF87",
+  },
+  topContainer:{
+    flex:1,
+    backgroundColor: '#FFEF87',    
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  bottomContainer:{
+    flex:2.5,
+    backgroundColor: '#FFFFFF',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    padding: 30,
+  },
+  mainPic:{
+    height: '80%'
+  },
+  calories:{
+    // backgroundColor: '#FFEF87',
+    padding: 5,
+    borderRadius: 40,
+    alignSelf: 'flex-start',
+    borderColor: '#000000',
+    borderWidth: 1,
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  title:{
+    fontSize: 32,
+    fontWeight: 'bold',
+    padding: 2, 
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 20,
+  },
+  howToStore:{
+    fontSize: 24,
+    fontWeight: 'bold',
+    padding: 2, 
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  textBody:{
+    padding: 2,
+    color: '#979797',
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  progressBar: {
+    marginLeft: 30,
+    marginRight: 30,
+    height: 20,
+    borderRadius: 20,
+  },
+  useWithin: {
+    marginTop: 10,
+    marginLeft: 35,
+    marginBottom: 3,
+    padding: 2,
+    color: '#E74F47',
+  },
+  freshAged: {
+    marginLeft: 20,
+    marginRight: 20,
+    padding: 2,
+    marginTop: 3,
+    fontSize: 10,
+  },
+  condition: {
+    flexDirection: 'row',
+    marginTop: 20,
+    // backgroundColor: 'red',
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 30,
+    paddingTop: 15,
+    paddingBottom: 15,
+    overflow: 'hidden',
+  },
+  eachCondition: {
+    flex: 1,
+    // borderColor: 'white',
+    borderLeftColor: 'black',
+    borderRightColor: 'black',
+    // borderTopColor: 'white',
+    // borderBottomColor: 'white',
+    borderLeftWidth: 0.3,
+    borderRightWidth: 0.3,
+    padding: 10,
+    overflow: 'hidden',
   },
 });
 
