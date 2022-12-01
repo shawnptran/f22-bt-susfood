@@ -116,9 +116,7 @@ import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item,
     return (
       <SafeAreaView style={styleSheet.MainContainer}>
    
-        <Text style={styleSheet.titleText}>
-          testing
-        </Text>
+        
         {/* <TextInput
             style={styleSheet.textInputStyle}
             onChangeText={onChangeText}

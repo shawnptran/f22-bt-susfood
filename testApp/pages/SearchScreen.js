@@ -9,6 +9,7 @@ import Hello from '../components/hello';
 import TestCard from '../components/expiringCard';
 import TwoColumn from '../components/columnList';
 import CustomAlert from '../components/customAlert';
+import AddButton from '../components/button';
 
 const SearchScreen = () => {
     return (
@@ -16,6 +17,9 @@ const SearchScreen = () => {
         <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}> 
           <AddButtonSearch/>
         </View>
+      //   <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+      //   <AddButton />
+      // </View>
        
     );
   }

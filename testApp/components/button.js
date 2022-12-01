@@ -13,16 +13,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-// function MyStack() {
-//   return (
-//     <Stack.Navigator>
-//       <Stack.Screen name="FridgeList" component={FridgeList} />
-//       {/* <Stack.Screen name="Notifications" component={Notifications} />
-//       <Stack.Screen name="Profile" component={Profile} />
-//       <Stack.Screen name="Settings" component={Settings} /> */}
-//     </Stack.Navigator>
-//   );
-// }
 
 const AddButton = () => {
   const [allShow, setAllShow] = useState(true);
@@ -30,7 +20,7 @@ const AddButton = () => {
   const [fridgeShow, setFridgeShow] = useState(false);
   const [pantryShow, setPantryShow] = useState(false);
   return (
-    <View style={{flexDirection:'column', alignItems:'flex-start', justifyContent:'center'}}>
+    <View style={{flexDirection:'column', alignItems:'flex-start', justifyContent:'center', marginLeft: -12, marginRight: -12}}>
       <View style={{flexDirection:'row', alignItems:'flex-start', justifyContent:'center'}}>
         
         <View style={styles.button}>
@@ -82,7 +72,7 @@ const AddButton = () => {
       {allShow ?
       ( <AddList/> ) : null}
       {expiringShow ?
-      ( <ExpiringList/> ) : null}
+      ( <ExpiringList/>   ) : null}
       {fridgeShow ?
       ( <FridgeList/> ) : null}
       {pantryShow ?

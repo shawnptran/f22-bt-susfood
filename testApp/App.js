@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Octicons from 'react-native-vector-icons/Octicons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import HomeScreen from './pages/HomeScreen';
 import SearchScreen from './pages/SearchScreen';
@@ -21,38 +24,31 @@ function MyTabs() {
   return (
     <Tab.Navigator 
       screenOptions = {{
-        tabBarStyle: {height: 80, borderTopLeftRadius: 50, borderTopRightRadius: 50, backgroundColor:"#FFFFFF", color: "#3cb371", marginTop: -100,}
-        }}
+        tabBarActiveTintColor: '#4ACC87',
+        tabBarStyle: {height: 80, borderTopLeftRadius: 50, borderTopRightRadius: 50, backgroundColor:"#FFFFFF", marginTop: -100,}
+        }}  
        >
       <Tab.Screen name="Home" component={HomeScreen} options={{
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={require('./icons/homeicon.png')                  
-              }/>
+          tabBarIcon: ({ color, size }) => (
+            <Octicons name="home" color={color} size={35} /> 
          ),
          tabBarLabel:() => {return null}       
         }}/>
       <Tab.Screen name="Search" component={SearchScreen} options={{
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={require('./icons/searchicon.png')                  
-              }/>
+          tabBarIcon: ({ color, size }) => (
+            <AntDesign name="search1" color={color} size={35}/> 
          ),
          tabBarLabel:() => {return null}             
         }}/>
       <Tab.Screen name="Fridge" component={FridgeScreen} options={{
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={require('./icons/fridgeicon.png')                  
-              }/>
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="fridge-industrial-outline" color={color} size={45}/>
          ),
          tabBarLabel:() => {return null}    
         }}/>
       <Tab.Screen name="Settings" component={SettingsScreen} options={{
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={require('./icons/settingicon.png')                  
-              }/>
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account" color={color} size={45}/>
          ),
          tabBarLabel:() => {return null}           
         }}
