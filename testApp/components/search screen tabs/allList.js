@@ -121,9 +121,9 @@ const AllList = () => {
   return (
     <SafeAreaView style={styleSheet.MainContainer}>
  
-      <Text style={styleSheet.titleText}>
+      {/* <Text style={styleSheet.titleText}>
         testing
-      </Text>
+      </Text> */}
       {/* <TextInput
           style={styleSheet.textInputStyle}
           onChangeText={onChangeText}

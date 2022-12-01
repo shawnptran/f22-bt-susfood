@@ -116,9 +116,7 @@ const FridgeList = () => {
   return (
     <SafeAreaView style={styleSheet.MainContainer}>
  
-      <Text style={styleSheet.titleText}>
-        testing
-      </Text>
+      
       {/* <TextInput
           style={styleSheet.textInputStyle}
           onChangeText={onChangeText}
