@@ -60,7 +60,7 @@ const TestCard = () => {
         style={{
           height: 50,
           width: 20,
-          backgroundColor: "#f2f2f2",
+          backgroundColor: "#f9f8f8",
         }}
       />
     );
@@ -105,7 +105,7 @@ const styleSheet = StyleSheet.create({
  
   MainContainer: {
     flex: 1,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#f9f8f8',
     marginLeft: 20
   },
 

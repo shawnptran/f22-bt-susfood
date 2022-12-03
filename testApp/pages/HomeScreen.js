@@ -11,7 +11,7 @@ import KitchenCard from '../components/kitchenCard';
 
 const HomeScreen = () => {
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: '#f9f8f8' }}>
     <Hello />
     <IOTD />
     <ExpiringCard />

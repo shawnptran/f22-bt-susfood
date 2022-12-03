@@ -12,7 +12,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 const FridgeScreen = () => {
     return (
-      <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: '#f9f8f8' }}>
         <AddButton />
       </View>
     );
