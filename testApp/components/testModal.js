@@ -4,13 +4,16 @@ import BottomSheet from "react-native-gesture-bottom-sheet";
 import { Title, ProgressBar, Colors, MD3Colors } from "react-native-paper";
 import IOTD from "./IOTD";
 import { LinearGradient } from "expo-linear-gradient";
+import CounterInput from "react-native-counter-input";
+import { ScrollView } from "react-native-gesture-handler";
+import NumericInput from 'react-native-numeric-input'
 
 const Example = () => {
 
   const bottomSheet = useRef();
   return (
     <SafeAreaView style={styles.container}>
-      <BottomSheet hasDraggableIcon ref={bottomSheet} height={670} sheetBackgroundColor={"#FFEF87"} style={styles.modal}>
+      <BottomSheet hasDraggableIcon ref={bottomSheet} height={670} sheetBackgroundColor={"#FFEF87"} radius={50} style={styles.modal}>
         <View style={styles.topContainer}>
         <Image
             style={styles.mainPic}
@@ -19,6 +22,32 @@ const Example = () => {
           />
         </View>
         <View style={styles.bottomContainer}>
+        <View alignItems='center'>
+        {/* <CounterInput
+              horizontal={true}
+              increaseButtonBackgroundColor='#4ACC87'
+              decreaseButtonBackgroundColor='#4ACC87'
+              inital='1'
+              style={styles.counter}
+              min='0'
+            /> */}
+            <NumericInput 
+                type='plus-minus'
+                totalWidth={80} 
+                totalHeight={40} 
+                iconSize={25}
+                step={1.5}
+                minValue={0}
+                // initValue={1}
+                rounded={true}
+                textColor='black' 
+                iconStyle={{ color: 'black' }} 
+                // rightButtonBackgroundColor='white' 
+                // leftButtonBackgroundColor='lightgray'
+                // elevation={0}
+                borderColor='white'
+             />
+            </View>
           <Title
             style={styles.title}>
               Bananas</Title>
@@ -44,19 +73,28 @@ const Example = () => {
             {/* </ProgressBar> */}
             </LinearGradient>
             <Text style={styles.freshAged}>Fresh                                                                                              Aged</Text>
-        
+            
             <View style={styles.condition}>
               <View style={styles.eachCondition}>
-                <Text>RNDON TEXT</Text>
+                <Image
+                  source={require('../icons/clock.png')}
+                  />
+                <Text>1 week</Text>
               </View>
               <View style={styles.eachCondition}>
-                <Text>RNDON TEXT</Text>
+              <Image
+                  source={require('../icons/dry.png')}
+                  style={styles.ImageIconStyle}/>
+                <Text style={{marginTop: 5,}}>Dry</Text>
               </View>
               <View style={styles.eachCondition}>
-                <Text>RNDON TEXT</Text>
+              <Image
+                  source={require('../icons/sync.png')}
+                  />
+                <Text>Compost</Text>
               </View>
             </View>
-        
+            
         </View>
         
       </BottomSheet>
@@ -108,11 +146,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   bottomContainer:{
-    flex:2.5,
+    flex:3,
     backgroundColor: '#FFFFFF',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    padding: 30,
+    borderTopLeftRadius: 50,
+    borderTopRightRadius: 50,
+    paddingTop: 10,
+    paddingRight: 30,
+    paddingLeft: 30,
   },
   mainPic:{
     height: '80%'
@@ -133,7 +173,7 @@ const styles = StyleSheet.create({
     padding: 2, 
     marginLeft: 20,
     marginRight: 20,
-    marginTop: 20,
+    marginTop: 10,
   },
   howToStore:{
     fontSize: 24,
@@ -190,6 +230,14 @@ const styles = StyleSheet.create({
     borderRightWidth: 0.3,
     padding: 10,
     overflow: 'hidden',
+    alignItems: 'center',
+  },
+  ImageIconStyle: {
+    marginTop: 6,
+  },
+  counter: {
+    height: 1,
+    elevation: 0,
   },
 });
 

@@ -1,8 +1,17 @@
 import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, 
   TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { LinearGradient } from "expo-linear-gradient";
+import { Title } from 'react-native-paper';
+import CounterInput from "react-native-counter-input";
+import { ScrollView } from "react-native-gesture-handler";
+import NumericInput from 'react-native-numeric-input'
+import BottomSheet from "react-native-gesture-bottom-sheet";
+
  
 const AddList = () => {
+  
+  const bottomSheet = useRef();
  
   const TEMPORARY = [];
   const ANIMAL_NAMES = [
@@ -94,7 +103,8 @@ const AddList = () => {
         alignItems: 'center',
         borderRadius: 30,
         }}>
-        <TouchableWithoutFeedback onPress={()=> getItem(item.name)} >
+        <TouchableWithoutFeedback onPress={() => 
+          bottomSheet.current.show()} >
           <Image source={item.src} style={styleSheet.image} ></Image>
         </TouchableWithoutFeedback>
         <Text style={styleSheet.itemText}> {item.name} </Text>
@@ -120,15 +130,80 @@ const AddList = () => {
  
   return (
     <SafeAreaView style={styleSheet.MainContainer}>
- 
-      
-      {/* <TextInput
-          style={styleSheet.textInputStyle}
-          onChangeText={onChangeText}
-          // value = {search}
-          underlineColorAndroid="transparent"
-          placeholder="Search Here"
-        /> */}
+        <BottomSheet hasDraggableIcon ref={bottomSheet} height={670} sheetBackgroundColor={"#FFEF87"} radius={50} style={styleSheet.modal}>
+        <View style={styleSheet.topContainer}>
+        <Image
+            style={styleSheet.mainPic}
+            resizeMode='contain'
+            source={require('../../icons/realbanana.png')}
+          />
+        </View>
+        <View style={styleSheet.bottomContainer}>
+        <View alignItems='center'>
+            <NumericInput 
+                type='plus-minus'
+                totalWidth={80} 
+                totalHeight={40} 
+                iconSize={25}
+                step={1.5}
+                minValue={0}
+                rounded={true}
+                textColor='black' 
+                iconStyle={{ color: 'black' }} 
+
+                borderColor='white'
+             />
+            </View>
+          <Title
+            style={styleSheet.title}>
+              Bananas</Title>
+          <Text
+            style={styleSheet.calories}>
+              105 cal</Text>
+          <Text></Text>
+          <Text
+            style={styleSheet.howToStore}>
+            How to Store</Text>
+          <Text
+            style={styleSheet.textBody}>
+            Bananas should be kept in a dry environment, away from sunlight for the longest shelf life</Text>
+          <Text
+          style={styleSheet.useWithin}>
+            Use within 3 days</Text>
+            <LinearGradient
+              colors={['#A7EBA5', '#D3751D']}
+              start={{ x: 0, y: 1 }}
+              end={{ x: 1, y: 1 }}
+              style={styleSheet.progressBar}>            
+              <Text></Text>
+            {/* </ProgressBar> */}
+            </LinearGradient>
+            <Text style={styleSheet.freshAged}>Fresh                                                                                              Aged</Text>
+            
+            <View style={styleSheet.condition}>
+              <View style={styleSheet.eachCondition}>
+                <Image
+                  source={require('../../icons/clock.png')}
+                  />
+                <Text>1 week</Text>
+              </View>
+              <View style={styleSheet.eachCondition}>
+              <Image
+                  source={require('../../icons/dry.png')}
+                  style={styleSheet.ImageIconStyle}/>
+                <Text style={{marginTop: 5,}}>Dry</Text>
+              </View>
+              <View style={styleSheet.eachCondition}>
+              <Image
+                  source={require('../../icons/sync.png')}
+                  />
+                <Text>Compost</Text>
+              </View>
+            </View>
+            
+        </View>
+        
+      </BottomSheet>
       <TextInput
           style={styleSheet.textInputStyle}
           onChangeText={(text) => searchFilterFunction(text)}
@@ -211,6 +286,109 @@ const styleSheet = StyleSheet.create({
     padding: 10,
     borderColor: '#009688',
     backgroundColor: '#FFFFFF',
+  },
+  modal: {
+    sheetBackgroundColor: "#FFEF87",
+  },
+  topContainer:{
+    flex:1,
+    backgroundColor: '#FFEF87',    
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  bottomContainer:{
+    flex:3,
+    backgroundColor: '#FFFFFF',
+    borderTopLeftRadius: 50,
+    borderTopRightRadius: 50,
+    paddingTop: 10,
+    paddingRight: 30,
+    paddingLeft: 30,
+  },
+  mainPic:{
+    height: '80%'
+  },
+  calories:{
+    // backgroundColor: '#FFEF87',
+    padding: 5,
+    borderRadius: 40,
+    alignSelf: 'flex-start',
+    borderColor: '#000000',
+    borderWidth: 1,
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  title:{
+    fontSize: 32,
+    fontWeight: 'bold',
+    padding: 2, 
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10,
+  },
+  howToStore:{
+    fontSize: 24,
+    fontWeight: 'bold',
+    padding: 2, 
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  textBody:{
+    padding: 2,
+    color: '#979797',
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  progressBar: {
+    marginLeft: 30,
+    marginRight: 30,
+    height: 20,
+    borderRadius: 20,
+  },
+  useWithin: {
+    marginTop: 10,
+    marginLeft: 35,
+    marginBottom: 3,
+    padding: 2,
+    color: '#E74F47',
+  },
+  freshAged: {
+    marginLeft: 20,
+    marginRight: 20,
+    padding: 2,
+    marginTop: 3,
+    fontSize: 10,
+  },
+  condition: {
+    flexDirection: 'row',
+    marginTop: 20,
+    // backgroundColor: 'red',
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 30,
+    paddingTop: 15,
+    paddingBottom: 15,
+    overflow: 'hidden',
+  },
+  eachCondition: {
+    flex: 1,
+    // borderColor: 'white',
+    borderLeftColor: 'black',
+    borderRightColor: 'black',
+    // borderTopColor: 'white',
+    // borderBottomColor: 'white',
+    borderLeftWidth: 0.3,
+    borderRightWidth: 0.3,
+    padding: 10,
+    overflow: 'hidden',
+    alignItems: 'center',
+  },
+  ImageIconStyle: {
+    marginTop: 6,
+  },
+  counter: {
+    height: 1,
+    elevation: 0,
   },
  
 });
