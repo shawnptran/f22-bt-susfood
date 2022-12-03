@@ -14,7 +14,7 @@ import AddButton from '../components/button';
 const SearchScreen = () => {
     return (
        
-        <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}> 
+        <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: '#f9f8f8'}}> 
           <AddButtonSearch/>
         </View>
       //   <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>

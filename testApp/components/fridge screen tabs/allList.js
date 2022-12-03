@@ -150,7 +150,7 @@ const AddList = () => {
                 rounded={true}
                 textColor='black' 
                 iconStyle={{ color: 'black' }} 
-
+                onChange={{}}
                 borderColor='white'
              />
             </View>

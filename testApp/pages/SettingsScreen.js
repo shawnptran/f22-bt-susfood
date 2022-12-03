@@ -13,7 +13,7 @@ import Example from '../components/testModal';
 
 const SettingsScreen = () => {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#f9f8f8' }}>
         {/* <BottomModal /> */}
         <Example />
       </View>
