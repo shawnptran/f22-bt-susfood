@@ -160,7 +160,7 @@ import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item,
   
     MainContainer: {
       flex: 1,
-      backgroundColor: 'white',
+      backgroundColor: "#f9f8f8",
       alignItems: 'center',
     },
    

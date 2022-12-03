@@ -167,7 +167,7 @@ const styleSheet = StyleSheet.create({
 
   MainContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: "#f9f8f8",
     alignItems: 'center',
   },
  

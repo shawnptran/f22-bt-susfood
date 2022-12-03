@@ -35,6 +35,9 @@ const AddButtonSearch = () => {
             style={styles.ImageIconStyle}
             />
             <View style={styles.SeparatorLine} />
+            <Text style={styles.buttonTextStyle}>
+            All
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.FacebookStyle} activeOpacity={0.5}
           onPress={() => {
@@ -45,6 +48,9 @@ const AddButtonSearch = () => {
             style={styles.ImageIconStyle}
             />
             <View style={styles.SeparatorLine} />
+            <Text style={styles.buttonTextStyle}>
+            Fruits
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.FacebookStyle} activeOpacity={0.5}
@@ -56,6 +62,9 @@ const AddButtonSearch = () => {
             style={styles.ImageIconStyle}
             />
             <View style={styles.SeparatorLine} />
+            <Text style={styles.buttonTextStyle}>
+            Vegetables
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.FacebookStyle} activeOpacity={0.5}
@@ -67,6 +76,9 @@ const AddButtonSearch = () => {
             style={styles.ImageIconStyle}
             />
             <View style={styles.SeparatorLine} />
+            <Text style={styles.buttonTextStyle}>
+            Meats
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.FacebookStyle} activeOpacity={0.5}
@@ -78,6 +90,9 @@ const AddButtonSearch = () => {
             style={styles.ImageIconStyle}
             />
             <View style={styles.SeparatorLine} />
+            <Text style={styles.buttonTextStyle}>
+            Dairy
+            </Text>
           </TouchableOpacity>
           
           </ScrollView>
@@ -102,10 +117,17 @@ const AddButtonSearch = () => {
     },
     FacebookStyle: {
       padding: 22,
+      alignItems: 'center',
     },
     FStyle: {
       padding: 22,
       marginLeft: 15,
+    },
+    buttonTextStyle: {
+      color: '#000',
+      marginTop: 10,
+      marginLeft: 5,
+      fontSize: 15,
     },
   });
     
