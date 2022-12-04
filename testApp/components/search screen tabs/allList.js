@@ -43,13 +43,13 @@ const AllList = () => {
         color: '#94E7B5'
     },
     {
-        id: 7,
+         id: 7,
         name: 'Lime',
         src:require('../../icons/lime.png'),
         color: '#FFFFFF'
     },
     {
-        id: 8,
+         id: 8,
         name: 'Beef',
         src:require('../../icons/beef.png'),
         color: '#FFFFFF'

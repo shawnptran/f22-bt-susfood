@@ -29,24 +29,28 @@ function MyTabs() {
         }}  
        >
       <Tab.Screen name="Home" component={HomeScreen} options={{
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Octicons name="home" color={color} size={35} /> 
          ),
          tabBarLabel:() => {return null}       
         }}/>
       <Tab.Screen name="Search" component={SearchScreen} options={{
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="search1" color={color} size={35}/> 
          ),
          tabBarLabel:() => {return null}             
         }}/>
       <Tab.Screen name="Fridge" component={FridgeScreen} options={{
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="fridge-industrial-outline" color={color} size={45}/>
          ),
          tabBarLabel:() => {return null}    
         }}/>
       <Tab.Screen name="Settings" component={SettingsScreen} options={{
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={45}/>
          ),

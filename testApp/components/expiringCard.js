@@ -108,7 +108,8 @@ const styleSheet = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f9f8f8',
     // backgroundColor: 'skyblue',
-    marginLeft: 20
+    marginLeft: 20,
+    marginTop: 20,
   },
 
   image: {
