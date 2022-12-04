@@ -28,7 +28,7 @@ const AllList = () => {
         id: 4,
         name: 'Grapes',
         src:require('../../icons/redgrapes.png'),
-        color: '#D2A0E8'
+        color: '#E9c1ff'
     },
     {
         id: 5,
@@ -46,61 +46,61 @@ const AllList = () => {
         id: 7,
         name: 'Lime',
         src:require('../../icons/lime.png'),
-        color: '#FFFFFF'
+        color: '#E0ffc1'
     },
     {
         id: 8,
         name: 'Beef',
         src:require('../../icons/beef.png'),
-        color: '#FFFFFF'
+        color: '#Ffe1da'
     },
     {
         id: 2,
         name: 'Red Bell Peppers',
-        src:require('../icons/redbell.png'),
+        src:require('../../icons/redbell.png'),
         color: '#FFC0BC'
     },
     {
         id: 3,
         name: 'Zucchini',
-        src:require('../icons/zucchini.png'),
+        src:require('../../icons/zucchini.png'),
         color: '#D4EEB0'
     },
     {
         id: 4,
         name: 'Tomato',
-        src:require('../icons/tomato.png'),
+        src:require('../../icons/tomato.png'),
         color: '#FF928C'
     },
     {
         id: 5,
         name: 'Avocado',
-        src:require('../icons/avocado.png'),
+        src:require('../../icons/avocado.png'),
         color: '#D4EEB0'
     },
     {
         id: 2,
         name: 'Milk',
-        src:require('../icons/milk.png'),
-        color: '#FFCE65'
+        src:require('../../icons/milk.png'),
+        color: '#Daf0ff'
     },
     {
         id: 3,
         name: 'Yogurt',
-        src:require('../icons/yogurt.png'),
-        color: '#FF928C'
+        src:require('../../icons/yogurt.png'),
+        color: '#Efb690'
     },
     {
         id: 4,
         name: 'Butter',
-        src:require('../icons/butter.png'),
-        color: '#FF928C'
+        src:require('../../icons/butter.png'),
+        color: '#Fff9da'
     },
     {
         id: 5,
         name: 'Cheese',
-        src:require('../icons/cheese.png'),
-        color: '#D4EEB0'
+        src:require('../../icons/cheese.png'),
+        color: '#Efdc90'
     },
   ];
 
