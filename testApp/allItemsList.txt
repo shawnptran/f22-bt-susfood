@@ -7,7 +7,7 @@
 {
     id: 2,
     name: 'Lemons',
-    src:require('../../icons/random.png'),
+    src:require('../../icons/lemons.png'),
     color: '#FFED9E'
 },
 {
@@ -37,48 +37,60 @@
 {
     id: 7,
     name: 'Lime',
-    src:require('../../icons/random.png'),
+    src:require('../../icons/lime.png'),
     color: '#FFFFFF'
 },
 {
     id: 8,
     name: 'Beef',
-    src:require('../../icons/random.png'),
+    src:require('../../icons/beef.png'),
     color: '#FFFFFF'
 },
 {
-    id: 2,
+    id: 9,
     name: 'Red Bell Peppers',
-    src:require('../icons/redbell.png'),
+    src:require('../../icons/redbell.png'),
     color: '#FFC0BC'
 },
 {
-    id: 3,
+    id: 10,
     name: 'Zucchini',
-    src:require('../icons/zucchini.png'),
+    src:require('../../icons/zucchini.png'),
     color: '#D4EEB0'
 },
 {
-    id: 4,
+    id: 11,
     name: 'Tomato',
-    src:require('../icons/random.png'),
+    src:require('../../icons/tomato.png'),
     color: '#FF928C'
 },
 {
-    id: 5,
+    id: 12,
     name: 'Avocado',
-    src:require('../icons/avocado.png'),
+    src:require('../../icons/avocadoList.png'),
     color: '#D4EEB0'
 },
 {
-    id: 2,
-    name: 'Mangos',
-    src:require('../icons/mangos.png'),
+    id: 13,
+    name: 'Milk',
+    src:require('../../icons/milk.png'),
     color: '#FFCE65'
 },
 {
-    id: 3,
-    name: 'Strawberries',
-    src:require('../icons/strawberries.png'),
-    color: 
-}
+    id: 14,
+    name: 'Yogurt',
+    src:require('../../icons/yogurt.png'),
+    color: '#FF928C'
+},
+{
+    id: 15,
+    name: 'Butter',
+    src:require('../../icons/butter.png'),
+    color: '#FF928C'
+},
+{
+    id: 16,
+    name: 'Cheese',
+    src:require('../../icons/cheese.png'),
+    color: '#D4EEB0'
+},
