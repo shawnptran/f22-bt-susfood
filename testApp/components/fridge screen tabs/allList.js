@@ -98,6 +98,7 @@ const AddList = () => {
       <View style={{
         adding: 8,
         backgroundColor: item.color,
+        elevation: 7,
         width: '43%',
         height: 135,
         alignItems: 'center',
@@ -122,7 +123,7 @@ const AddList = () => {
         style={{
           height: 40,
           width: 10,
-          backgroundColor: "white",
+          backgroundColor: '#f9f8f8',
         }}
       />
     );
@@ -150,7 +151,6 @@ const AddList = () => {
                 rounded={true}
                 textColor='black' 
                 iconStyle={{ color: 'black' }} 
-                onChange={{}}
                 borderColor='white'
              />
             </View>
@@ -203,7 +203,7 @@ const AddList = () => {
             
         </View>
         
-      </BottomSheet>
+        </BottomSheet>
       <TextInput
           style={styleSheet.textInputStyle}
           onChangeText={(text) => searchFilterFunction(text)}
@@ -275,17 +275,18 @@ const styleSheet = StyleSheet.create({
     fontSize: 16,
     color: 'black',
     textAlign: 'center',
-    marginTop: 40,
+    marginTop: 44,
   },
 
   textInputStyle: {
     height: 40,
     width: 300,
     borderRadius: 20,
-    borderWidth: 1,
+    // borderWidth: 1,
     padding: 10,
-    borderColor: '#009688',
+    // borderColor: '#009688',
     backgroundColor: '#FFFFFF',
+    elevation: 10,
   },
   modal: {
     sheetBackgroundColor: "#FFEF87",

@@ -1,4 +1,4 @@
-import { View, StyleSheet, SafeAreaView, FlatList, Text, Image } from 'react-native';
+import { View, StyleSheet, SafeAreaView, FlatList, Text, Image, ScrollView } from 'react-native';
  
 const TestCard = () => {
  
@@ -48,12 +48,6 @@ const TestCard = () => {
  
   ];
  
-  const ItemRender = ({ name }) => (
-    <View style={styleSheet.item}>
-      <Text style={styleSheet.itemText}>{name}</Text>
-    </View>
-  );
- 
   const Separator = () => {
     return (
       <View
@@ -65,7 +59,7 @@ const TestCard = () => {
       />
     );
   }
- 
+
   return (
     <SafeAreaView style={styleSheet.MainContainer}>
  
@@ -75,17 +69,23 @@ const TestCard = () => {
  
       <FlatList
         data={ANIMAL_NAMES}
+        rowWrapperStyle={styleSheet.column}
+        contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
         renderItem={({ item }) => 
-        <View style={{
-          padding: 8,
-          backgroundColor: item.color,
-          width: 110,
-          height: 100,
-          justifyContent: 'center',
-          alignItems: 'center',
-          borderRadius: 30,
-        }}>
-          <Image source={item.src}style={styleSheet.image}></Image>
+        <View>
+          <View style={{
+            padding: 8,
+            backgroundColor: item.color,
+            width: 110,
+            height: 100,
+            alignItems: 'center',
+            borderRadius: 30,
+            elevation: 5,
+          }}>
+            <Image source={item.src}style={styleSheet.image}></Image>
+            <Text style={styleSheet.foodText}> {item.name}</Text>
+          </View>
+          <View style={styleSheet.emptySpace}></View>
         </View>
       }
         keyExtractor={item => item.id}
@@ -93,7 +93,7 @@ const TestCard = () => {
         horizontal={true}
         showsHorizontalScrollIndicator={false}
       />
- 
+      
     </SafeAreaView>
   );
 }
@@ -103,12 +103,15 @@ const styleSheet = StyleSheet.create({
   MainContainer: {
     flex: 1,
     backgroundColor: '#f9f8f8',
+    // backgroundColor: 'skyblue',
     marginLeft: 20
   },
 
   image: {
-    height: 50,
-    width: 50,
+    height: '65%',
+    // width: '50%',
+    resizeMode: 'contain',
+    marginTop: '10%',
   },
  
   titleText: {
@@ -117,25 +120,27 @@ const styleSheet = StyleSheet.create({
     textAlign: 'left',
     padding: 12
   },
- 
-  item: {
-    padding: 8,
-    backgroundColor: '#94C973',
-    width: 110,
-    height: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 30,
-  },
-
-  
- 
   itemText: {
     fontSize: 16,
     color: 'white',
     textAlign: 'center'
+  },
+
+  foodText: {
+    fontSize: 16,
+    color: 'black',
+    textAlign: 'center',
+    marginTop: 33,
+  },
+
+  column: {
+    flex: 1,
+    justifyContent: "space-around",
+  },
+  emptySpace: {
+    height: 50,
   }
- 
+
 });
 
 export default TestCard; 

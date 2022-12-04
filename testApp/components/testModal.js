@@ -42,6 +42,7 @@ const Example = () => {
                 rounded={true}
                 textColor='black' 
                 iconStyle={{ color: 'black' }} 
+                onChange={{}}
                 // rightButtonBackgroundColor='white' 
                 // leftButtonBackgroundColor='lightgray'
                 // elevation={0}
