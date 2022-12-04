@@ -37,7 +37,7 @@ const AddList = () => {
         id: 4,
         name: 'Grapes',
         src:require('../../icons/redgrapes.png'),
-        color: '#D2A0E8'
+        color: '#E9c1ff'
     },
     {
         id: 5,
@@ -52,16 +52,16 @@ const AddList = () => {
         color: '#94E7B5'
     },
     {
-            id: 7,
+        id: 7,
         name: 'Lime',
         src:require('../../icons/lime.png'),
-        color: '#FFFFFF'
+        color: '#E0ffc1'
     },
     {
-            id: 8,
+        id: 8,
         name: 'Beef',
         src:require('../../icons/beef.png'),
-        color: '#FFFFFF'
+        color: '#Ffe1da'
     },
     {
         id: 9,
@@ -91,7 +91,7 @@ const AddList = () => {
         id: 13,
         name: 'Milk',
         src:require('../../icons/milk.png'),
-        color: '#FFCE65'
+        color: '#Daf0ff'
     },
     {
         id: 14,
@@ -103,13 +103,13 @@ const AddList = () => {
         id: 15,
         name: 'Butter',
         src:require('../../icons/butter.png'),
-        color: '#FF928C'
+        color: '#Fff9da'
     },
     {
         id: 16,
         name: 'Cheese',
         src:require('../../icons/cheese.png'),
-        color: '#D4EEB0'
+        color: '#Efdc90'
     },
   ];
 
