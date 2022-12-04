@@ -19,19 +19,19 @@
 {
     id: 4,
     name: 'Grapes',
-    src:require('../../icons/random.png'),
+    src:require('../../icons/redgrapes.png'),
     color: '#D2A0E8'
 },
 {
     id: 5,
     name: 'Pineapple',
-    src:require('../../icons/random.png'),
+    src:require('../../icons/pineapple.png'),
     color: '#FFDE99'
 },
 {
     id: 6,
     name: 'Watermelon',
-    src:require('../../icons/random.png'),
+    src:require('../../icons/watermelon.png'),
     color: '#94E7B5'
 },
 {
@@ -69,18 +69,6 @@
     name: 'Avocado',
     src:require('../icons/avocado.png'),
     color: '#D4EEB0'
-},
-{
-    id: 6,
-    name: 'Lemon',
-    src:require('../icons/random.png'),
-    color: '#FFED9E'
-},
-{
-    id: 1,
-    name: 'Bananas',
-    src:require('../icons/bananas.png'),
-    color: '#FFED9E'
 },
 {
     id: 2,
