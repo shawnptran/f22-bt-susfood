@@ -91,15 +91,18 @@ const styles = StyleSheet.create({
   hello: {
     fontSize: 32,
     color: '#4ACC87',
+    marginTop: 70,
   }, 
   name: {
     fontWeight: 'bold',
     fontSize: 32,
     color: '#4ACC87',
+    marginTop: 70,
   },
   subheading: {
     fontSize: 16,
-    color: '#BDBBBB'
+    color: '#BDBBBB',
+    marginBottom: 20,
   },
   leftIOTD: {
     flex: 0.1,

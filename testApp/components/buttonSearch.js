@@ -22,20 +22,20 @@ const AddButtonSearch = () => {
     const [pantryShow, setPantryShow] = useState(false);
     const [dairyShow,   setDairyShow] = useState(false);
     return (
-      <View style={{flexDirection:'column', alignItems:'flex-start', justifyContent:'center', marginLeft: 15, marginRight: -40}}>
+      <View style={{flexDirection:'column', alignItems:'flex-start', justifyContent:'center', marginRight: -16, marginLeft: -11}}>
         <View style={{flexDirection:'row', alignItems:'flex-start', justifyContent:'center'}}>
-          <ScrollView horizontal={true}>
+      
           
-          <TouchableOpacity style={styles.FacebookStyle} activeOpacity={0.5}
+          <TouchableOpacity style={styles.FStyle} activeOpacity={0.5}
           onPress={() => {
             setAllShow(true); setExpiringShow(false); setFridgeShow(false); setPantryShow(false); setDairyShow(false);
           } }>
             <Image
-            source={require('../icons/ic_cake.png')}
-            style={styles.ImageIconStyle}
+            source={require('../icons/kitchen-tools.png')}
+            style={styles.AllIconStyle}
             />
             <View style={styles.SeparatorLine} />
-            <Text style={styles.buttonTextStyle}>
+            <Text style={styles.buttonAllStyle}>
             All
             </Text>
           </TouchableOpacity>
@@ -48,7 +48,7 @@ const AddButtonSearch = () => {
             style={styles.ImageIconStyle}
             />
             <View style={styles.SeparatorLine} />
-            <Text style={styles.buttonTextStyle}>
+            <Text style={styles.buttonFruitStyle}>
             Fruits
             </Text>
           </TouchableOpacity>
@@ -62,7 +62,7 @@ const AddButtonSearch = () => {
             style={styles.ImageIconStyle}
             />
             <View style={styles.SeparatorLine} />
-            <Text style={styles.buttonTextStyle}>
+            <Text style={styles.buttonVegStyle}>
             Vegetables
             </Text>
           </TouchableOpacity>
@@ -95,7 +95,7 @@ const AddButtonSearch = () => {
             </Text>
           </TouchableOpacity>
           
-          </ScrollView>
+          
         </View>
         {allShow ?
         ( <AllList/> ) : null}
@@ -116,18 +116,42 @@ const AddButtonSearch = () => {
       margin: 1,
     },
     FacebookStyle: {
-      padding: 22,
+      padding: 18 ,
       alignItems: 'center',
     },
     FStyle: {
       padding: 22,
-      marginLeft: 15,
+      alignItems: 'center', 
     },
     buttonTextStyle: {
       color: '#000',
       marginTop: 10,
       marginLeft: 5,
       fontSize: 15,
+    },
+    buttonFruitStyle: {
+      color: '#000',
+      marginTop: 5,
+      marginLeft: 5,
+      fontSize: 15,
+    },
+    buttonVegStyle: {
+      color: '#000',
+      marginTop: 8,
+      marginLeft: 5,
+      fontSize: 15,
+    },
+    buttonAllStyle: {
+      color: '#000',
+      marginTop: 7,
+      marginLeft: 5,
+      fontSize: 15,
+    },
+    AllIconStyle: {
+      marginTop: -3,
+      width: 30,
+      height: 30,
+      resizeMode: 'contain',
     },
   });
     
