@@ -1,0 +1,96 @@
+{
+    id: 1,
+    name: 'Apple',
+    src:require('../../icons/apple.png'),
+    color: '#FFA8A3'
+},
+{
+    id: 2,
+    name: 'Lemons',
+    src:require('../../icons/random.png'),
+    color: '#FFED9E'
+},
+{
+    id: 3,
+    name: 'Bananas',
+    src:require('../../icons/bananas.png'),
+    color: '#FFE58E'
+},
+{
+    id: 4,
+    name: 'Grapes',
+    src:require('../../icons/random.png'),
+    color: '#D2A0E8'
+},
+{
+    id: 5,
+    name: 'Pineapple',
+    src:require('../../icons/random.png'),
+    color: '#FFDE99'
+},
+{
+    id: 6,
+    name: 'Watermelon',
+    src:require('../../icons/random.png'),
+    color: '#94E7B5'
+},
+{
+    id: 7,
+    name: 'Lime',
+    src:require('../../icons/random.png'),
+    color: '#FFFFFF'
+},
+{
+    id: 8,
+    name: 'Beef',
+    src:require('../../icons/random.png'),
+    color: '#FFFFFF'
+},
+{
+    id: 2,
+    name: 'Red Bell Peppers',
+    src:require('../icons/redbell.png'),
+    color: '#FFC0BC'
+},
+{
+    id: 3,
+    name: 'Zucchini',
+    src:require('../icons/zucchini.png'),
+    color: '#D4EEB0'
+},
+{
+    id: 4,
+    name: 'Tomato',
+    src:require('../icons/random.png'),
+    color: '#FF928C'
+},
+{
+    id: 5,
+    name: 'Avocado',
+    src:require('../icons/avocado.png'),
+    color: '#D4EEB0'
+},
+{
+    id: 6,
+    name: 'Lemon',
+    src:require('../icons/random.png'),
+    color: '#FFED9E'
+},
+{
+    id: 1,
+    name: 'Bananas',
+    src:require('../icons/bananas.png'),
+    color: '#FFED9E'
+},
+{
+    id: 2,
+    name: 'Mangos',
+    src:require('../icons/mangos.png'),
+    color: '#FFCE65'
+},
+{
+    id: 3,
+    name: 'Strawberries',
+    src:require('../icons/strawberries.png'),
+    color: 
+}

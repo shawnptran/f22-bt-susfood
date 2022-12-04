@@ -47,13 +47,7 @@ const TestCard = () => {
     }
  
   ];
- 
-  const ItemRender = ({ name }) => (
-    <View style={styleSheet.item}>
-      <Text style={styleSheet.itemText}>{name}</Text>
-    </View>
-  );
- 
+
   const Separator = () => {
     return (
       <View
@@ -87,6 +81,10 @@ const TestCard = () => {
             alignItems: 'center',
             borderRadius: 30,
             elevation: 5,
+            shadowColor: '#171717',
+            shadowOffset: {width: 0, height: 5},
+            shadowOpacity: 0.2,
+            shadowRadius: 3,
           }}>
             <Image source={item.src}style={styleSheet.image}></Image>
             <Text style={styleSheet.foodText}> {item.name}</Text>
@@ -136,7 +134,7 @@ const styleSheet = StyleSheet.create({
     fontSize: 16,
     color: 'black',
     textAlign: 'center',
-    marginTop: 33,
+    marginTop: 36,
   },
 
   column: {

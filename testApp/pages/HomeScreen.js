@@ -9,8 +9,7 @@ import KitchenCard from '../components/kitchenCard';
 
 const HomeScreen = () => {
   return (
-    <View >
-      <ScrollView style={{ backgroundColor: '#f9f8f8' }}>
+      <ScrollView style={{ backgroundColor: '#f9f8f8', marginBottom: 0 }}>
       <View style={styles.intro}>
         <View style={styles.container}>
           <Text style={styles.hello}>Hello, </Text> 
@@ -52,8 +51,9 @@ const HomeScreen = () => {
       <View style={{height: 15,}}></View>
       <ExpiringCard />
       <KitchenCard />
+      <View style={{ backgroundColor: '#f9f8f8', height: 100}}>
+      </View>
     </ScrollView>
-  </View>
   );
 }
 

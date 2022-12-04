@@ -35,6 +35,10 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 5,
     elevation: 6,
+    shadowColor: '#171717',
+    shadowOffset: {width: 0, height: 5},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
   text: {
     color: "white",

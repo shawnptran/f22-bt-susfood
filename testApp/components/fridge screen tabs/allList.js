@@ -99,6 +99,10 @@ const AddList = () => {
         adding: 8,
         backgroundColor: item.color,
         elevation: 7,
+        shadowColor: '#171717',
+        shadowOffset: {width: 0, height: 5},
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
         width: '43%',
         height: 135,
         alignItems: 'center',
@@ -142,6 +146,8 @@ const AddList = () => {
         <View style={styleSheet.bottomContainer}>
         <View alignItems='center'>
             <NumericInput 
+                value={0} 
+                onChange={value => value+1} 
                 type='plus-minus'
                 totalWidth={80} 
                 totalHeight={40} 
@@ -287,6 +293,10 @@ const styleSheet = StyleSheet.create({
     // borderColor: '#009688',
     backgroundColor: '#FFFFFF',
     elevation: 10,
+    shadowColor: '#171717',
+    shadowOffset: {width: 0, height: 5},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
   modal: {
     sheetBackgroundColor: "#FFEF87",
