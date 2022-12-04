@@ -7,97 +7,97 @@ const AllList = () => {
   const TEMPORARY = [];
   const ANIMAL_NAMES = [
     {
-      // id: 1,
+      id: 1,
       name: 'Apple',
       src:require('../../icons/apple.png'),
       color: '#FFA8A3'
     },
     {
-        // id: 2,
+        id: 2,
         name: 'Lemons',
         src:require('../../icons/lemons.png'),
         color: '#FFED9E'
     },
     {
-        // id: 3,
+        id: 3,
         name: 'Bananas',
         src:require('../../icons/bananas.png'),
         color: '#FFE58E'
     },
     {
-        // id: 4,
+        id: 4,
         name: 'Grapes',
         src:require('../../icons/redgrapes.png'),
         color: '#D2A0E8'
     },
     {
-        // id: 5,
+        id: 5,
         name: 'Pineapple',
         src:require('../../icons/pineapple.png'),
         color: '#FFDE99'
     },
     {
-        // id: 6,
+        id: 6,
         name: 'Watermelon',
         src:require('../../icons/watermelon.png'),
         color: '#94E7B5'
     },
     {
-        // id: 7,
+         id: 7,
         name: 'Lime',
         src:require('../../icons/lime.png'),
         color: '#FFFFFF'
     },
     {
-        // id: 8,
+         id: 8,
         name: 'Beef',
         src:require('../../icons/beef.png'),
         color: '#FFFFFF'
     },
     {
-        // id: 2,
+        id: 9,
         name: 'Red Bell Peppers',
         src:require('../../icons/redbell.png'),
         color: '#FFC0BC'
     },
     {
-        // id: 3,
+        id: 10,
         name: 'Zucchini',
         src:require('../../icons/zucchini.png'),
         color: '#D4EEB0'
     },
     {
-        // id: 4,
+        id: 11,
         name: 'Tomato',
         src:require('../../icons/tomato.png'),
         color: '#FF928C'
     },
     {
-        // id: 5,
+        id: 12,
         name: 'Avocado',
         src:require('../../icons/avocado.png'),
         color: '#D4EEB0'
     },
     {
-        // id: 2,
+        id: 13,
         name: 'Milk',
         src:require('../../icons/milk.png'),
         color: '#FFCE65'
     },
     {
-        // id: 3,
+        id: 14,
         name: 'Yogurt',
         src:require('../../icons/yogurt.png'),
         color: '#FF928C'
     },
     {
-        // id: 4,
+        id: 15,
         name: 'Butter',
         src:require('../../icons/butter.png'),
         color: '#FF928C'
     },
     {
-        // id: 5,
+        id: 16,
         name: 'Cheese',
         src:require('../../icons/cheese.png'),
         color: '#D4EEB0'
@@ -137,6 +137,7 @@ const AllList = () => {
       <View style={{
         adding: 8,
         backgroundColor: item.color,
+        resizeMode: 'contain',
         width: '43%',
         height: 135,
         alignItems: 'center',

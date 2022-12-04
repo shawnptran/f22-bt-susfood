@@ -30,6 +30,7 @@ const AddButton = () => {
         
         <View style={styles.button}>
           <Button 
+            textColor="green"
             title="All"
             onPress={() => {
               setAllShow(true); setExpiringShow(false); setFridgeShow(false); setPantryShow(false); 
@@ -89,6 +90,11 @@ const AddButton = () => {
 const styles = StyleSheet.create({
   button: {
     margin: 1,
+
+  },
+  buttonName: {
+    fontSize: 20,
+
   },
   container: {
     flexDirection:'row'
