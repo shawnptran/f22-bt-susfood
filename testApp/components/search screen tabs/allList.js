@@ -55,49 +55,49 @@ const AllList = () => {
         color: '#Ffe1da'
     },
     {
-        id: 2,
+        id: 9,
         name: 'Red Bell Peppers',
         src:require('../../icons/redbell.png'),
         color: '#FFC0BC'
     },
     {
-        id: 3,
+        id: 10,
         name: 'Zucchini',
         src:require('../../icons/zucchini.png'),
         color: '#D4EEB0'
     },
     {
-        id: 4,
+        id: 11,
         name: 'Tomato',
         src:require('../../icons/tomato.png'),
         color: '#FF928C'
     },
     {
-        id: 5,
+        id: 12,
         name: 'Avocado',
         src:require('../../icons/avocado.png'),
         color: '#D4EEB0'
     },
     {
-        id: 2,
+        id: 13,
         name: 'Milk',
         src:require('../../icons/milk.png'),
         color: '#Daf0ff'
     },
     {
-        id: 3,
+        id: 14,
         name: 'Yogurt',
         src:require('../../icons/yogurt.png'),
         color: '#Efb690'
     },
     {
-        id: 4,
+        id: 15,
         name: 'Butter',
         src:require('../../icons/butter.png'),
         color: '#Fff9da'
     },
     {
-        id: 5,
+        id: 16,
         name: 'Cheese',
         src:require('../../icons/cheese.png'),
         color: '#Efdc90'
@@ -137,6 +137,7 @@ const AllList = () => {
       <View style={{
         adding: 8,
         backgroundColor: item.color,
+        resizeMode: 'contain',
         width: '43%',
         height: 135,
         alignItems: 'center',
