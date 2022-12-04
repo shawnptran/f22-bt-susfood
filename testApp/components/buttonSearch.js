@@ -23,6 +23,11 @@ const AddButtonSearch = () => {
     const [dairyShow,   setDairyShow] = useState(false);
     return (
       <View style={{flexDirection:'column', alignItems:'flex-start', justifyContent:'center', marginRight: -16, marginLeft: -11}}>
+        <View style={styles.intro}>
+        <View style={styles.container}>
+          <Text style={styles.hello}>Search </Text> 
+        </View>
+      </View>
         <View style={{flexDirection:'row', alignItems:'flex-start', justifyContent:'center'}}>
       
           
@@ -146,6 +151,7 @@ const AddButtonSearch = () => {
       marginTop: 7,
       marginLeft: 5,
       fontSize: 15,
+      marginBottom: 2,/////
     },
     AllIconStyle: {
       marginTop: -3,
@@ -153,6 +159,22 @@ const AddButtonSearch = () => {
       height: 30,
       resizeMode: 'contain',
     },
+    container: {
+      flexDirection:'row'
+  
+    },
+    intro: {
+      marginTop: 25,
+      marginLeft: 20,
+    },
+    hello: {
+      fontSize: 36,
+      color: '#000000',
+      marginTop: 70,
+      fontWeight: 'bold',
+      marginBottom: 5,
+    }, 
+
   });
     
   export default AddButtonSearch;

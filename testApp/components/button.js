@@ -1,4 +1,4 @@
-import { View, StyleSheet, Alert } from 'react-native';
+import { View, StyleSheet, Alert, Text } from 'react-native';
 import { Button } from 'react-native-paper';
 
 import AddList from './fridge screen tabs/allList';
@@ -21,6 +21,11 @@ const AddButton = () => {
   const [pantryShow, setPantryShow] = useState(false);
   return (
     <View style={{flexDirection:'column', alignItems:'flex-start', justifyContent:'center', marginLeft: -12, marginRight: -12}}>
+      <View style={styles.intro}>
+        <View style={styles.container}>
+          <Text style={styles.hello}>My Kitchen </Text> 
+        </View>
+      </View>
       <View style={{flexDirection:'row', alignItems:'flex-start', justifyContent:'center'}}>
         
         <View style={styles.button}>
@@ -85,6 +90,21 @@ const styles = StyleSheet.create({
   button: {
     margin: 1,
   },
+  container: {
+    flexDirection:'row'
+
+  },
+  intro: {
+    marginTop: 25,
+    marginLeft: 20,
+  },
+  hello: {
+    fontSize: 36,
+    color: '#000000',
+    marginTop: 70,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  }, 
 });
   
 export default AddButton;
