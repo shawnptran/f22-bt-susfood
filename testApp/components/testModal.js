@@ -23,28 +23,18 @@ const Example = () => {
         </View>
         <View style={styles.bottomContainer}>
         <View alignItems='center'>
-        {/* <CounterInput
-              horizontal={true}
-              increaseButtonBackgroundColor='#4ACC87'
-              decreaseButtonBackgroundColor='#4ACC87'
-              inital='1'
-              style={styles.counter}
-              min='0'
-            /> */}
             <NumericInput 
+                value={0} 
+                onChange={value => value+1} 
                 type='plus-minus'
                 totalWidth={80} 
                 totalHeight={40} 
                 iconSize={25}
                 step={1.5}
                 minValue={0}
-                // initValue={1}
                 rounded={true}
                 textColor='black' 
                 iconStyle={{ color: 'black' }} 
-                // rightButtonBackgroundColor='white' 
-                // leftButtonBackgroundColor='lightgray'
-                // elevation={0}
                 borderColor='white'
              />
             </View>
@@ -126,6 +116,10 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 5,
     elevation: 6,
+    shadowColor: '#171717',
+    shadowOffset: {width: 0, height: 5},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
   text: {
     color: "white",

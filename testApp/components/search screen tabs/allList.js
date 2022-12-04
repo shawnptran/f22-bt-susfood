@@ -112,7 +112,7 @@ const AllList = () => {
         style={{
           height: 40,
           width: 10,
-          backgroundColor: "white",
+          backgroundColor: '#f9f8f8',
         }}
       />
     );
