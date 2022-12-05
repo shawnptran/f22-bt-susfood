@@ -172,7 +172,7 @@ const AddButtonSearch = () => {
       color: '#000000',
       marginTop: 70,
       fontWeight: 'bold',
-      marginBottom: 5,
+      marginBottom: 12,
     }, 
 
   });

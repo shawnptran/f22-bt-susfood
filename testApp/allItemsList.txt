@@ -5,7 +5,7 @@
     color: '#FFA8A3'
 },
 {
-    id: 2,
+    id: 2,      
     name: 'Lemons',
     src:require('../../icons/lemons.png'),
     color: '#FFED9E'
@@ -80,7 +80,7 @@
     id: 14,
     name: 'Yogurt',
     src:require('../../icons/yogurt.png'),
-    color: '#FF928C'
+    color: '#fff7f0'
 },
 {
     id: 15,
@@ -92,5 +92,5 @@
     id: 16,
     name: 'Cheese',
     src:require('../../icons/cheese.png'),
-    color: '#Efdc90'
+    color: '#FFE58E'
 },

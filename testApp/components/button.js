@@ -26,17 +26,18 @@ const AddButton = () => {
           <Text style={styles.hello}>My Kitchen </Text> 
         </View>
       </View>
+      <View style={{height: 15}}></View>
       <View style={{flexDirection:'row', alignItems:'flex-start', justifyContent:'center'}}>
         
         <View style={styles.button}>
           <Button 
-            textColor="green"
+            textColor="#4ACC87"
             title="All"
             onPress={() => {
               setAllShow(true); setExpiringShow(false); setFridgeShow(false); setPantryShow(false); 
             } } >
             {' '}
-            All
+            <Text style={{fontSize: 22}}>All</Text>
           </Button>   
         </View>
 
@@ -44,34 +45,38 @@ const AddButton = () => {
         <View style={styles.button}>
           <Button 
             title="Expiring Soon"
+            textColor="#4ACC87"
             onPress={() => {
               setAllShow(false); setExpiringShow(true); setFridgeShow(false); setPantryShow(false); 
             } } >
             {' '}
-            Expiring Soon
+            <Text style={{fontSize: 22}}>Expiring Soon</Text>
           </Button>   
         </View>
 
         <View style={styles.button}>
           <Button 
             title="Fridge"
+            textColor="#4ACC87"
             onPress={() => {
               setAllShow(false); setExpiringShow(false); setFridgeShow(true); setPantryShow(false); 
             } } >
-            {' '}
-            Fridge
+            <Text style={{fontSize: 22}}>Fridge</Text>
+            
           </Button>   
         </View>
 
         <View style={styles.button}>
           <Button 
             title="Pantry"
+            textColor="#4ACC87"
             onPress={() => {
                 setAllShow(false); setExpiringShow(false); setFridgeShow(false); setPantryShow(true); 
               } } >
             {' '}
-            Pantry
-          </Button>   
+            <Text style={{fontSize: 22}}>Pantry</Text>
+          </Button>
+          <View style={{height: 15}}></View>
         </View>
 
       </View>
@@ -90,6 +95,8 @@ const AddButton = () => {
 const styles = StyleSheet.create({
   button: {
     margin: 1,
+    // borderColor: 'red',
+    // borderWidth: 1,
 
   },
   buttonName: {

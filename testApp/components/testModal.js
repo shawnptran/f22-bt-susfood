@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   calories:{
     // backgroundColor: '#FFEF87',
-    padding: 5,
+    padding: 10,
     borderRadius: 40,
     alignSelf: 'flex-start',
     borderColor: '#000000',

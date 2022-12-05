@@ -24,26 +24,26 @@ const TestCard = () => {
     {
       id: 4,
       name: 'Tomato',
-      src:require('../icons/random.png'),
+      src:require('../icons/tomato.png'),
       color: '#FF928C'
     },
     {
       id: 5,
       name: 'Avocado',
-      src:require('../icons/random.png'),
+      src:require('../icons/avocado.png'),
       color: '#D4EEB0'
     },
     {
       id: 6,
       name: 'Lemon',
-      src:require('../icons/random.png'),
+      src:require('../icons/lemons.png'),
       color: '#FFED9E'
     },
     {
       id: 7,
       name: 'Lime',
-      src:require('../icons/random.png'),
-      color: '#BAECB2'
+      src:require('../icons/lime.png'),
+      color: '#E0ffc1'
     }
  
   ];
