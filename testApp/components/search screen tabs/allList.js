@@ -96,7 +96,7 @@ const AllList = () => {
         id: 14,
         name: 'Yogurt',
         src:require('../../icons/yogurt.png'),
-        color: '#FF928C'
+        color: '#Efb690'
     },
     {
         id: 15,
