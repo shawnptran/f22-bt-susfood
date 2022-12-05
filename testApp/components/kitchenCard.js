@@ -3,15 +3,10 @@ import { View, StyleSheet, SafeAreaView, FlatList, Text, Image, ScrollView } fro
 const TestCard = () => {
  
   const ANIMAL_NAMES = [
-    {
-      id: 1,
-      name: 'Beef',
-      src:require('../icons/bananas.png'),
-      color: '#FFED9E'
-    },
+   
     {
       id: 2,
-      name: 'Lettuce',
+      name: 'Mangos',
       src:require('../icons/mangos.png'),
       color: '#FFCE65'
     },
@@ -22,30 +17,23 @@ const TestCard = () => {
       color: '#FF928C'
     },
     {
-      id: 4,
-      name: 'Tomato',
-      src:require('../icons/random.png'),
-      color: '#FFED9E'
+      id: 13,
+      name: 'Milk',
+      src:require('../icons/milk.png'),
+      color: '#Daf0ff'
     },
     {
-      id: 5,
-      name: 'Avocado',
-      src:require('../icons/random.png'),
-      color: '#FFED9E'
+        id: 14,
+        name: 'Yogurt',
+        src:require('../icons/yogurt.png'),
+        color: '#fff7f0'
     },
     {
-      id: 6,
-      name: 'Lemon',
-      src:require('../icons/random.png'),
-      color: '#FFED9E'
+        id: 15,
+        name: 'Butter',
+        src:require('../icons/butter.png'),
+        color: '#Fff9da'
     },
-    {
-      id: 7,
-      name: 'Lime',
-      src:require('../icons/random.png'),
-      color: '#FFED9E'
-    }
- 
   ];
  
   const Separator = () => {

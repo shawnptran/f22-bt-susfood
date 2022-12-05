@@ -1,14 +1,15 @@
 import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item, 
-  TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
+  TouchableOpacity, TouchableWithoutFeedback, TextInput, Modal } from 'react-native';
 import React, { useState, useEffect, useRef } from 'react';
 import { LinearGradient } from "expo-linear-gradient";
-import { Title } from 'react-native-paper';
+import { Button, Title } from 'react-native-paper';
 import CounterInput from "react-native-counter-input";
 import { ScrollView } from "react-native-gesture-handler";
 import NumericInput from 'react-native-numeric-input'
 import BottomSheet from "react-native-gesture-bottom-sheet";
+
  
-const FruitsList = () => {
+const AddList = () => {
   
   const bottomSheet = useRef();
  
@@ -56,66 +57,23 @@ const FruitsList = () => {
         src:require('../../icons/lime.png'),
         color: '#E0ffc1'
     },
-    {
-        id: 8,
-        name: 'Beef',
-        src:require('../../icons/beef.png'),
-        color: '#Ffe1da'
-    },
-    {
-        id: 9,
-        name: 'Red Bell Peppers',
-        src:require('../../icons/redbell.png'),
-        color: '#FFC0BC'
-    },
-    {
-        id: 10,
-        name: 'Zucchini',
-        src:require('../../icons/zucchini.png'),
-        color: '#D4EEB0'
-    },
-    {
-        id: 11,
-        name: 'Tomato',
-        src:require('../../icons/tomato.png'),
-        color: '#FF928C'
-    },
+    
+    
     {
         id: 12,
         name: 'Avocado',
         src:require('../../icons/avocado.png'),
         color: '#D4EEB0'
     },
-    {
-        id: 13,
-        name: 'Milk',
-        src:require('../../icons/milk.png'),
-        color: '#Daf0ff'
-    },
-    {
-        id: 14,
-        name: 'Yogurt',
-        src:require('../../icons/yogurt.png'),
-        color: '#FF928C'
-    },
-    {
-        id: 15,
-        name: 'Butter',
-        src:require('../../icons/butter.png'),
-        color: '#Fff9da'
-    },
-    {
-        id: 16,
-        name: 'Cheese',
-        src:require('../../icons/cheese.png'),
-        color: '#Efdc90'
-    },
+    
   ];
 
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
   const [text, onChangeText] = useState("Use");
+  const [modalVisible, setModalVisible] = useState(false);
+
 
   useEffect(() => {
         setFilteredDataSource(ANIMAL_NAMES);
@@ -138,6 +96,7 @@ const FruitsList = () => {
       setSearch(text);
     }
   };
+
 
   const ItemView = ({ item }) => {
     return (
@@ -179,10 +138,33 @@ const FruitsList = () => {
       />
     );
   }
+
+  const [isActive, setIsActive] = useState(false);
+  const [isActive2, setIsActive2] = useState(false);
+
+
+  const handleClick = () => {
+    setIsActive(current => !current);
+  };
+
+  const handleClick2 = () => {
+    setIsActive2(current => !current);
+  };
  
   return (
     <SafeAreaView style={styleSheet.MainContainer}>
-        <BottomSheet hasDraggableIcon ref={bottomSheet} height={670} sheetBackgroundColor={"#FFEF87"} radius={50} style={styleSheet.modal}>
+        <BottomSheet hasDraggableIcon ref={bottomSheet} height={760} sheetBackgroundColor={"#FFEF87"} radius={50} style={styleSheet.modal}>
+        {/* <View style={styleSheet.centeredView}> */}
+        <Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              Alert.alert("Modal has been closed.");
+              setModalVisible(!modalVisible);
+            }}
+          ></Modal>
+        {/* </View> */}
         <View style={styleSheet.topContainer}>
         <Image
             style={styleSheet.mainPic}
@@ -223,22 +205,18 @@ const FruitsList = () => {
           <Text
           style={styleSheet.useWithin}>
             Use within 3 days</Text>
-            <LinearGradient
-              colors={['#A7EBA5', '#D3751D']}
-              start={{ x: 0, y: 1 }}
-              end={{ x: 1, y: 1 }}
-              style={styleSheet.progressBar}>            
-              <Text></Text>
-            {/* </ProgressBar> */}
-            </LinearGradient>
-            <Text style={styleSheet.freshAged}>Fresh                                                                                              Aged</Text>
+            <Image 
+              source={require('../../icons/progressBar.png')}
+              style={{marginLeft: 35,}}
+            />
+            <Text style={styleSheet.freshAged}>Fresh                                                                            Aged</Text>
             
             <View style={styleSheet.condition}>
               <View style={styleSheet.eachCondition}>
                 <Image
                   source={require('../../icons/clock.png')}
                   />
-                <Text>1 week</Text>
+                <Text>3 days</Text>
               </View>
               <View style={styleSheet.eachCondition}>
               <Image
@@ -254,6 +232,30 @@ const FruitsList = () => {
               </View>
             </View>
             
+            <View style={styleSheet.buttons}>
+              <Button style={[styleSheet.addtokitchen, 
+                {backgroundColor: isActive2 ? '#4ACC87' : 'gray'}]}
+                onPress={handleClick2}
+                textColor="white"
+              >
+                <Text style={{fontSize: 18}}>Add to Kitchen  </Text>
+                <Image
+                  style={{height: 15, width: 15, resizeMode: 'contain'}}
+                  source={require('../../icons/plus.png')}
+                />
+              </Button> 
+              <Button style={[styleSheet.notificaiton, 
+                {backgroundColor: isActive ? '#4ACC87' : 'gray'}]}
+                onPress={handleClick}
+                textColor="white"
+              >
+                <Text style={{fontSize: 18}}>Notifications  </Text>
+                <Image
+                  style={{height: 18, width: 18, resizeMode: 'contain', marginBottom: -3}}
+                  source={require('../../icons/bell.png')}
+                />
+              </Button> 
+            </View>
         </View>
         
         </BottomSheet>
@@ -295,6 +297,7 @@ const styleSheet = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f8f8",
     alignItems: 'center',
+    // justifyContent: 'center'
   },
  
   titleText: {
@@ -369,12 +372,13 @@ const styleSheet = StyleSheet.create({
   calories:{
     // backgroundColor: '#FFEF87',
     padding: 5,
-    borderRadius: 40,
+    borderRadius: 12,
     alignSelf: 'flex-start',
     borderColor: '#000000',
     borderWidth: 1,
     marginLeft: 20,
     marginRight: 20,
+    fontSize: 16,
   },
   title:{
     fontSize: 32,
@@ -393,9 +397,10 @@ const styleSheet = StyleSheet.create({
   },
   textBody:{
     padding: 2,
-    color: '#979797',
+    color: 'gray',
     marginLeft: 20,
     marginRight: 20,
+    fontSize: 17,
   },
   progressBar: {
     marginLeft: 30,
@@ -407,15 +412,17 @@ const styleSheet = StyleSheet.create({
     marginTop: 10,
     marginLeft: 35,
     marginBottom: 3,
+    fontWeight: 'bold',
+    fontSize: 15,
     padding: 2,
     color: '#E74F47',
   },
   freshAged: {
-    marginLeft: 20,
+    marginLeft: 27,
     marginRight: 20,
-    padding: 2,
-    marginTop: 3,
-    fontSize: 10,
+    // padding: 2,
+    // marginTop: 3,
+    fontSize: 14,
   },
   condition: {
     flexDirection: 'row',
@@ -448,7 +455,39 @@ const styleSheet = StyleSheet.create({
     height: 1,
     elevation: 0,
   },
+  buttons:{
+    flexDirection: 'row',
+    // alignItems: 'center',
+    // flex: 1,
+    marginTop: 20,
+  },
+  notificaiton: {
+    borderRadius: 40,
+    backgroundColor: 'pink',
+    paddingTop: 13,
+    paddingBottom: 5,
+    shadowColor: '#171717',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    height: 60,
+    width: 174,
+  },
+  addtokitchen:{
+    borderRadius: 40,
+    backgroundColor: 'lightblue',
+    paddingTop: 13,
+    paddingBottom: 5,
+    shadowColor: '#171717',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    height: 60,
+    width: 174,
+    marginRight: 20,
+  },
+
  
 });
 
-export default FruitsList; 
+export default AddList; 

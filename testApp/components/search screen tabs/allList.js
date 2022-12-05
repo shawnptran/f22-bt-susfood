@@ -7,13 +7,38 @@ import CounterInput from "react-native-counter-input";
 import { ScrollView } from "react-native-gesture-handler";
 import NumericInput from 'react-native-numeric-input'
 import BottomSheet from "react-native-gesture-bottom-sheet";
+
  
-const AllList = () => {
+const AddList = () => {
   
   const bottomSheet = useRef();
  
   const TEMPORARY = [];
   const ANIMAL_NAMES = [
+    {
+      id: 13,
+      name: 'Milk',
+      src:require('../../icons/milk.png'),
+      color: '#Daf0ff'
+  },
+  {
+      id: 14,
+      name: 'Yogurt',
+      src:require('../../icons/yogurt.png'),
+      color: '#fff7f0'
+  },
+  {
+      id: 15,
+      name: 'Butter',
+      src:require('../../icons/butter.png'),
+      color: '#Fff9da'
+  },
+  {
+      id: 16,
+      name: 'Cheese',
+      src:require('../../icons/cheese.png'),
+      color: '#FFE58E'
+  },
     {
       id: 1,
       name: 'Apple',
@@ -86,30 +111,7 @@ const AllList = () => {
         src:require('../../icons/avocado.png'),
         color: '#D4EEB0'
     },
-    {
-        id: 13,
-        name: 'Milk',
-        src:require('../../icons/milk.png'),
-        color: '#Daf0ff'
-    },
-    {
-        id: 14,
-        name: 'Yogurt',
-        src:require('../../icons/yogurt.png'),
-        color: '#FF928C'
-    },
-    {
-        id: 15,
-        name: 'Butter',
-        src:require('../../icons/butter.png'),
-        color: '#Fff9da'
-    },
-    {
-        id: 16,
-        name: 'Cheese',
-        src:require('../../icons/cheese.png'),
-        color: '#Efdc90'
-    },
+    
   ];
 
   const [search, setSearch] = useState('');
@@ -369,12 +371,13 @@ const styleSheet = StyleSheet.create({
   calories:{
     // backgroundColor: '#FFEF87',
     padding: 5,
-    borderRadius: 40,
+    borderRadius: 12,
     alignSelf: 'flex-start',
     borderColor: '#000000',
     borderWidth: 1,
     marginLeft: 20,
     marginRight: 20,
+    fontSize: 16,
   },
   title:{
     fontSize: 32,
@@ -393,9 +396,10 @@ const styleSheet = StyleSheet.create({
   },
   textBody:{
     padding: 2,
-    color: '#979797',
+    color: 'gray',
     marginLeft: 20,
     marginRight: 20,
+    fontSize: 16,
   },
   progressBar: {
     marginLeft: 30,
@@ -451,4 +455,4 @@ const styleSheet = StyleSheet.create({
  
 });
 
-export default AllList; 
+export default AddList; 

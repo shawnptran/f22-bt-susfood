@@ -7,9 +7,9 @@ import CounterInput from "react-native-counter-input";
 import { ScrollView } from "react-native-gesture-handler";
 import NumericInput from 'react-native-numeric-input'
 import BottomSheet from "react-native-gesture-bottom-sheet";
+
  
-const DairyList = () => {
- 
+const AddList = () => {
   
   const bottomSheet = useRef();
  
@@ -97,7 +97,7 @@ const DairyList = () => {
         id: 14,
         name: 'Yogurt',
         src:require('../../icons/yogurt.png'),
-        color: '#FF928C'
+        color: '#fff7f0'
     },
     {
         id: 15,
@@ -109,7 +109,7 @@ const DairyList = () => {
         id: 16,
         name: 'Cheese',
         src:require('../../icons/cheese.png'),
-        color: '#Efdc90'
+        color: '#FFE58E'
     },
   ];
 
@@ -370,12 +370,13 @@ const styleSheet = StyleSheet.create({
   calories:{
     // backgroundColor: '#FFEF87',
     padding: 5,
-    borderRadius: 40,
+    borderRadius: 12,
     alignSelf: 'flex-start',
     borderColor: '#000000',
     borderWidth: 1,
     marginLeft: 20,
     marginRight: 20,
+    fontSize: 16,
   },
   title:{
     fontSize: 32,
@@ -394,9 +395,10 @@ const styleSheet = StyleSheet.create({
   },
   textBody:{
     padding: 2,
-    color: '#979797',
+    color: 'gray',
     marginLeft: 20,
     marginRight: 20,
+    fontSize: 16,
   },
   progressBar: {
     marginLeft: 30,
@@ -452,4 +454,4 @@ const styleSheet = StyleSheet.create({
  
 });
 
-export default DairyList; 
+export default AddList; 

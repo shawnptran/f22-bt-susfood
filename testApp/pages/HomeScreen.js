@@ -79,12 +79,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   IOTDheading:{
-    fontSize: 32,
+    fontSize: 36,
     fontWeight: 'bold',
     color: 'white',
+    marginBottom: 5,
   },
   IOTDitemname: {
-    fontSize: 16,
+    fontSize: 18,
     color: 'white',
     fontStyle: 'italic'
   },

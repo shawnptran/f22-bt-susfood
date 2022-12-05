@@ -2,7 +2,7 @@ import { Alert, View, StyleSheet, SafeAreaView, FlatList, Text, Image, Item,
   TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
 import React, { useState, useEffect, useRef } from 'react';
 import { LinearGradient } from "expo-linear-gradient";
-import { Title } from 'react-native-paper';
+import { Title, Button } from 'react-native-paper';
 import CounterInput from "react-native-counter-input";
 import { ScrollView } from "react-native-gesture-handler";
 import NumericInput from 'react-native-numeric-input'
@@ -16,6 +16,43 @@ const AddList = () => {
   const TEMPORARY = [];
   const ANIMAL_NAMES = [
     {
+      id: 3,
+      name: 'Bananas',
+      src:require('../../icons/bananas.png'),
+      color: '#FFE58E'
+  },
+  
+  {
+    id: 2,
+    name: 'Red Bell Peppers',
+    src:require('../../icons/redbell.png'),
+    color: '#FFC0BC'
+  },
+  {
+    id: 2,
+    name: 'Mangos',
+    src:require('../../icons/mangos.png'),
+    color: '#FFCE65'
+  },
+  {
+    id: 3,
+    name: 'Strawberries',
+    src:require('../../icons/strawberries.png'),
+    color: '#FF928C'
+  },
+  {
+    id: 12,
+    name: 'Avocado',
+    src:require('../../icons/avocado.png'),
+    color: '#D4EEB0'
+},
+{
+    id: 14,
+    name: 'Yogurt',
+    src:require('../../icons/yogurt.png'),
+    color: '#fff7f0'
+},
+    {
       id: 1,
       name: 'Apple',
       src:require('../../icons/apple.png'),
@@ -27,12 +64,7 @@ const AddList = () => {
         src:require('../../icons/lemons.png'),
         color: '#FFED9E'
     },
-    {
-        id: 3,
-        name: 'Bananas',
-        src:require('../../icons/bananas.png'),
-        color: '#FFE58E'
-    },
+    
     {
         id: 4,
         name: 'Grapes',
@@ -87,30 +119,7 @@ const AddList = () => {
         src:require('../../icons/avocado.png'),
         color: '#D4EEB0'
     },
-    {
-        id: 13,
-        name: 'Milk',
-        src:require('../../icons/milk.png'),
-        color: '#Daf0ff'
-    },
-    {
-        id: 14,
-        name: 'Yogurt',
-        src:require('../../icons/yogurt.png'),
-        color: '#FF928C'
-    },
-    {
-        id: 15,
-        name: 'Butter',
-        src:require('../../icons/butter.png'),
-        color: '#Fff9da'
-    },
-    {
-        id: 16,
-        name: 'Cheese',
-        src:require('../../icons/cheese.png'),
-        color: '#Efdc90'
-    },
+    
   ];
 
   const [search, setSearch] = useState('');
@@ -180,10 +189,23 @@ const AddList = () => {
       />
     );
   }
+
+  const [isActive, setIsActive] = useState(true);
+  const [isActive2, setIsActive2] = useState(true);
+
+
+  const handleClick = () => {
+    setIsActive(current => !current);
+  };
+
+  const handleClick2 = () => {
+    setIsActive2(current => !current);
+  };
+ 
  
   return (
     <SafeAreaView style={styleSheet.MainContainer}>
-        <BottomSheet hasDraggableIcon ref={bottomSheet} height={670} sheetBackgroundColor={"#FFEF87"} radius={50} style={styleSheet.modal}>
+        <BottomSheet hasDraggableIcon ref={bottomSheet} height={760} sheetBackgroundColor={"#FFEF87"} radius={50} style={styleSheet.modal}>
         <View style={styleSheet.topContainer}>
         <Image
             style={styleSheet.mainPic}
@@ -194,7 +216,7 @@ const AddList = () => {
         <View style={styleSheet.bottomContainer}>
         <View alignItems='center'>
             <NumericInput 
-                value={0} 
+                value={3} 
                 onChange={value => value+1} 
                 type='plus-minus'
                 totalWidth={80} 
@@ -224,14 +246,10 @@ const AddList = () => {
           <Text
           style={styleSheet.useWithin}>
             Use within 3 days</Text>
-            <LinearGradient
-              colors={['#A7EBA5', '#D3751D']}
-              start={{ x: 0, y: 1 }}
-              end={{ x: 1, y: 1 }}
-              style={styleSheet.progressBar}>            
-              <Text></Text>
-            {/* </ProgressBar> */}
-            </LinearGradient>
+            <Image 
+              source={require('../../icons/progressBar.png')}
+              style={{marginLeft: 35,}}
+            />
             <Text style={styleSheet.freshAged}>Fresh                                                                                              Aged</Text>
             
             <View style={styleSheet.condition}>
@@ -254,7 +272,30 @@ const AddList = () => {
                 <Text>Compost</Text>
               </View>
             </View>
-            
+            <View style={styleSheet.buttons}>
+              <Button style={[styleSheet.addtokitchen, 
+                {backgroundColor: isActive2 ? '#4ACC87' : 'gray'}]}
+                onPress={handleClick2}
+                textColor="white"
+              >
+                <Text style={{fontSize: 18}}>Remove  </Text>
+                <Image
+                  style={{height: 18, width: 18, resizeMode: 'contain', marginBottom: -3}}
+                  source={require('../../icons/minus.png')}
+                />
+              </Button> 
+              <Button style={[styleSheet.notificaiton, 
+                {backgroundColor: isActive ? '#4ACC87' : 'gray'}]}
+                onPress={handleClick}
+                textColor="white"
+              >
+                <Text style={{fontSize: 18}}>Notifications  </Text>
+                <Image
+                  style={{height: 18, width: 18, resizeMode: 'contain', marginBottom: -3}}
+                  source={require('../../icons/bell.png')}
+                />
+              </Button> 
+            </View>
         </View>
         
         </BottomSheet>
@@ -370,12 +411,13 @@ const styleSheet = StyleSheet.create({
   calories:{
     // backgroundColor: '#FFEF87',
     padding: 5,
-    borderRadius: 40,
+    borderRadius: 12,
     alignSelf: 'flex-start',
     borderColor: '#000000',
     borderWidth: 1,
     marginLeft: 20,
     marginRight: 20,
+    fontSize: 16,
   },
   title:{
     fontSize: 32,
@@ -394,9 +436,10 @@ const styleSheet = StyleSheet.create({
   },
   textBody:{
     padding: 2,
-    color: '#979797',
+    color: 'gray',
     marginLeft: 20,
     marginRight: 20,
+    fontSize: 16,
   },
   progressBar: {
     marginLeft: 30,
@@ -449,7 +492,38 @@ const styleSheet = StyleSheet.create({
     height: 1,
     elevation: 0,
   },
- 
+  buttons:{
+    flexDirection: 'row',
+    // alignItems: 'center',
+    // flex: 1,
+    marginTop: 20,
+  },
+  notificaiton: {
+    borderRadius: 40,
+    backgroundColor: 'pink',
+    paddingTop: 13,
+    paddingBottom: 5,
+    shadowColor: '#171717',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    height: 60,
+    width: 174,
+  },
+  addtokitchen:{
+    borderRadius: 40,
+    backgroundColor: 'lightblue',
+    paddingTop: 13,
+    paddingBottom: 5,
+    shadowColor: '#171717',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    height: 60,
+    width: 174,
+    marginRight: 20,
+  },
+
 });
 
 export default AddList; 

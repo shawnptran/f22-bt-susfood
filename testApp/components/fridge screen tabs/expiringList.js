@@ -7,9 +7,10 @@ import CounterInput from "react-native-counter-input";
 import { ScrollView } from "react-native-gesture-handler";
 import NumericInput from 'react-native-numeric-input'
 import BottomSheet from "react-native-gesture-bottom-sheet";
+
  
-const ExpiringList = () => {
- 
+const AddList = () => {
+  
   const bottomSheet = useRef();
  
   const TEMPORARY = [];
@@ -21,95 +22,42 @@ const ExpiringList = () => {
       color: '#FFA8A3'
     },
     {
-        id: 2,
-        name: 'Lemons',
-        src:require('../../icons/lemons.png'),
-        color: '#FFED9E'
+      id: 2,
+      name: 'Red Bell Peppers',
+      src:require('../../icons/redbell.png'),
+      color: '#FFC0BC'
     },
     {
-        id: 3,
-        name: 'Bananas',
-        src:require('../../icons/bananas.png'),
-        color: '#FFE58E'
+      id: 3,
+      name: 'Zucchini',
+      src:require('../../icons/zucchini.png'),
+      color: '#D4EEB0'
     },
     {
-        id: 4,
-        name: 'Grapes',
-        src:require('../../icons/redgrapes.png'),
-        color: '#E9c1ff'
+      id: 4,
+      name: 'Tomato',
+      src:require('../../icons/tomato.png'),
+      color: '#FF928C'
     },
     {
-        id: 5,
-        name: 'Pineapple',
-        src:require('../../icons/pineapple.png'),
-        color: '#FFDE99'
+      id: 5,
+      name: 'Avocado',
+      src:require('../../icons/avocado.png'),
+      color: '#D4EEB0'
     },
     {
-        id: 6,
-        name: 'Watermelon',
-        src:require('../../icons/watermelon.png'),
-        color: '#94E7B5'
+      id: 6,
+      name: 'Lemon',
+      src:require('../../icons/lemons.png'),
+      color: '#FFED9E'
     },
     {
-        id: 7,
-        name: 'Lime',
-        src:require('../../icons/lime.png'),
-        color: '#E0ffc1'
-    },
-    {
-        id: 8,
-        name: 'Beef',
-        src:require('../../icons/beef.png'),
-        color: '#Ffe1da'
-    },
-    {
-        id: 9,
-        name: 'Red Bell Peppers',
-        src:require('../../icons/redbell.png'),
-        color: '#FFC0BC'
-    },
-    {
-        id: 10,
-        name: 'Zucchini',
-        src:require('../../icons/zucchini.png'),
-        color: '#D4EEB0'
-    },
-    {
-        id: 11,
-        name: 'Tomato',
-        src:require('../../icons/tomato.png'),
-        color: '#FF928C'
-    },
-    {
-        id: 12,
-        name: 'Avocado',
-        src:require('../../icons/avocado.png'),
-        color: '#D4EEB0'
-    },
-    {
-        id: 13,
-        name: 'Milk',
-        src:require('../../icons/milk.png'),
-        color: '#Daf0ff'
-    },
-    {
-        id: 14,
-        name: 'Yogurt',
-        src:require('../../icons/yogurt.png'),
-        color: '#FF928C'
-    },
-    {
-        id: 15,
-        name: 'Butter',
-        src:require('../../icons/butter.png'),
-        color: '#Fff9da'
-    },
-    {
-        id: 16,
-        name: 'Cheese',
-        src:require('../../icons/cheese.png'),
-        color: '#Efdc90'
-    },
+      id: 7,
+      name: 'Lime',
+      src:require('../../icons/lime.png'),
+      color: '#E0ffc1'
+    }
+ 
   ];
 
   const [search, setSearch] = useState('');
@@ -369,12 +317,13 @@ const styleSheet = StyleSheet.create({
   calories:{
     // backgroundColor: '#FFEF87',
     padding: 5,
-    borderRadius: 40,
+    borderRadius: 12,
     alignSelf: 'flex-start',
     borderColor: '#000000',
     borderWidth: 1,
     marginLeft: 20,
     marginRight: 20,
+    fontSize: 16,
   },
   title:{
     fontSize: 32,
@@ -393,9 +342,10 @@ const styleSheet = StyleSheet.create({
   },
   textBody:{
     padding: 2,
-    color: '#979797',
+    color: 'gray',
     marginLeft: 20,
     marginRight: 20,
+    fontSize: 16,
   },
   progressBar: {
     marginLeft: 30,
@@ -451,4 +401,4 @@ const styleSheet = StyleSheet.create({
  
 });
 
-export default ExpiringList; 
+export default AddList; 
