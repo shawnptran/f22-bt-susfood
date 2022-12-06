@@ -13,6 +13,7 @@ const Example = () => {
   const bottomSheet = useRef();
   return (
     <SafeAreaView style={styles.container}>
+
       <BottomSheet hasDraggableIcon ref={bottomSheet} height={670} sheetBackgroundColor={"#FFEF87"} radius={50} style={styles.modal}>
         <View style={styles.topContainer}>
         <Image
@@ -92,11 +93,11 @@ const Example = () => {
         style={styles.button}
         onPress={() => 
           bottomSheet.current.show()}>
+
         <Text style={styles.text}>Open modal</Text>
       </TouchableOpacity>
 
     </SafeAreaView>
-    
   );
 };
 
