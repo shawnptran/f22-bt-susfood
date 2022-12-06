@@ -9,13 +9,17 @@ import Hello from '../components/hello';
 import TestCard from '../components/expiringCard';
 import TwoColumn from '../components/columnList';
 import CustomAlert from '../components/customAlert';
+import AddButton from '../components/button';
 
 const SearchScreen = () => {
     return (
        
-        <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}> 
+        <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: '#f9f8f8'}}> 
           <AddButtonSearch/>
         </View>
+      //   <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+      //   <AddButton />
+      // </View>
        
     );
   }
