@@ -6,9 +6,25 @@ import IOTD from "./IOTD";
 import { LinearGradient } from "expo-linear-gradient";
 import CounterInput from "react-native-counter-input";
 import { ScrollView } from "react-native-gesture-handler";
-import NumericInput from 'react-native-numeric-input'
+import NumericInput from 'react-native-numeric-input';
+import { getDatabase, ref, onValue} from "firebase/database";
+import {db} from '../config';
+
+
+
 
 const Example = () => {
+  const maxDays = useState('');
+  function readData(){
+  const starCountRef = ref(db, 'Bananas/' + postId);
+  onValue(starCountRef, (snapshot) => {
+  const data = snapshot.val();
+  return data;
+
+});
+}
+  const db = getDatabase();
+  const food = readData();
 
   const bottomSheet = useRef();
   return (
@@ -41,7 +57,7 @@ const Example = () => {
             </View>
           <Title
             style={styles.title}>
-              Bananas</Title>
+              food["DOP_Refrigerate_Max"]</Title>
           <Text
             style={styles.calories}>
               105 cal</Text>
